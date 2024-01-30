@@ -1,0 +1,1111 @@
+{
+    "fileScanResults": [
+        {
+            "filepath": "./bad_3810_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Restores a session and redirects based on UUID in the URL path.",
+            "reasoning": "The source code is vulnerable to Command Injection due to unsanitized user input directly used in shell_exec.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 4,
+                                        "endLine": 4,
+                                        "snippet": "shell_exec(\"/usr/sbin/oo-restorer-wrapper.sh $uuid\");"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4323_0.cpp",
+            "runs": [
+            ],
+            "language": "C++",
+            "purpose": "Reads and queues lines from a socket connection.",
+            "reasoning": "No explicit vulnerabilities found in the provided code snippet.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4682_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Deletes a repository based on user input.",
+            "reasoning": "The source code is vulnerable to an Object Injection due to unsafe deserialization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 9,
+                                        "endLine": 9,
+                                        "snippet": "$f_repo_id = gpc_get_string( 'id' );"
+                                    }
+                                }
+                            ],
+                            "message": "Object Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1750_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Generates a color histogram from an image.",
+            "reasoning": "The source code is vulnerable to Command Injection due to unsanitized input in system call.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 4,
+                                        "endLine": 4,
+                                        "snippet": "      output = `convert #{image_path} -resize 400x400 -format %c -dither None -quantize YIQ -colors #{colors} -depth #{depth} histogram:info:-`"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1974_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Sets or gets an object field value with a default if undefined.",
+            "reasoning": "No convincing vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4339_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Sanitizes sensitive information from environment variables in output.",
+            "reasoning": "No direct vulnerabilities found. Indirect risks if SECRET_MIN_SIZE is too low or if secrets are poorly formatted.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5184_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Tests a crash in image processing with gdImageCropThreshold.",
+            "reasoning": "No convincing vulnerabilities found. The code is straightforward without handling external input.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3747_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Renders a settings page for user OpenID configurations.",
+            "reasoning": "No direct vulnerabilities found in the provided PHP snippet.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_555_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Deeply merges properties of source objects into a target object.",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2501_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Checks if an IP or hostname resolves to a private network address.",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3810_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Restores data based on UUID and redirects",
+            "reasoning": "The source code is vulnerable to Command Injection due to unsanitized input passed to shell_exec.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 5,
+                                        "endLine": 5,
+                                        "snippet": "    shell_exec(\"/usr/sbin/oo-restorer-wrapper.sh $uuid\");"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4923_0.phtml",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Manages HTML redirection to a specified URI.",
+            "reasoning": "The source code properly escapes the URI for HTML and JavaScript contexts, preventing XSS vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4682_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Deletes a repository based on user input.",
+            "reasoning": "No direct vulnerabilities found without context of surrounding framework or security measures.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4323_0.cpp",
+            "runs": [
+            ],
+            "language": "C++",
+            "purpose": "Reads lines from a QSslSocket and queues them for processing.",
+            "reasoning": "No convincing vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_559_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Deeply assigns default properties to an object.",
+            "reasoning": "No convincing vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3889_0.java",
+            "runs": [
+            ],
+            "language": "Java",
+            "purpose": "Custom WebViewClient to handle URL loading.",
+            "reasoning": "The code is vulnerable to URL Redirection to untrusted sites due to no validation.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 12,
+                                        "endLine": 18,
+                                        "snippet": "    public boolean shouldOverrideUrlLoading(WebView view, String url) {\n        Uri uri = Uri.parse(url);\n        if (uri.getHost() != null && uri.getHost().endsWith(\"example.com\")) {\n            return false;\n        }\n\n        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));"
+                                    }
+                                }
+                            ],
+                            "message": "URL Redirection to untrusted site"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3747_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Renders a settings page for user OpenID configuration.",
+            "reasoning": "No direct vulnerabilities found in the provided snippet.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3699_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Encryption module using pycryptopp or pycrypto for AES encryption and decryption.",
+            "reasoning": "The code is vulnerable to padding oracle attacks due to predictable padding in the fallback AES implementation.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 20,
+                                        "snippet": "\n    def aesEncrypt(data, key):\n        cipher = AES.new(key)"
+                                    }
+                                }
+                            ],
+                            "message": "Predictable Padding"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4930_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Lint SQL queries using an AJAX request",
+            "reasoning": "The source code is vulnerable to XSS if the JSON response is not properly sanitized.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 7,
+                                        "endLine": 20,
+                                        "snippet": "    }\n\n    function handleResponse(json) {\n        response = JSON.parse(json);\n\n        var found = [];\n        for (var idx in response) {\n            found.push({\n                from: CodeMirror.Pos(\n                    response[idx].fromLine, response[idx].fromColumn"
+                                    }
+                                }
+                            ],
+                            "message": "Potential XSS from unsanitized JSON response"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4029_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Unable to determine without more context.",
+            "reasoning": "No vulnerabilities found due to lack of context and code.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3806_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Enhances security in a Rails application by handling CSRF attacks.",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4130_0.h",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Defines structures and constants for L2TP protocol handling.",
+            "reasoning": "No vulnerabilities found due to the nature of definitions without logic implementation.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3990_0.go",
+            "runs": [
+            ],
+            "language": "Go",
+            "purpose": "Sanitizes URLs to prevent open-redirect vulnerabilities.",
+            "reasoning": "The function attempts to mitigate open-redirect vulnerabilities but fails to validate the host part of the URL, making it exploitable.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 11,
+                                        "endLine": 17,
+                                        "snippet": "// user input, or else there is a possible open-redirect vulnerability.\nfunc SafeRedirectURL(urlStr string) string {\n\tu, err := url.Parse(urlStr)\n\tif err != nil || !strings.HasPrefix(u.Path, \"/\") {\n\t\treturn \"/\"\n\t}\n"
+                                    }
+                                }
+                            ],
+                            "message": "Open-Redirect Vulnerability"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4923_0.phtml",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Manage HTML redirection to a specified URI.",
+            "reasoning": "The source code properly escapes the URI for HTML and JavaScript contexts, preventing XSS vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2892_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Configuration for downloading and installing Python and Visual C++ Build Tools.",
+            "reasoning": "Hardcoded URLs could lead to untrusted resource download if the environment variables are not set securely.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 2,
+                                        "endLine": 2,
+                                        "snippet": ""
+                                    }
+                                },
+                                {
+                                    "region": {
+                                        "startLine": 6,
+                                        "endLine": 6,
+                                        "snippet": "  logName: 'build-tools-log.txt'"
+                                    }
+                                }
+                            ],
+                            "message": "Untrusted resource download vulnerability."
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1007_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1540_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Custom image cropping for Paperclip library",
+            "reasoning": "No direct vulnerabilities found. The code relies on Paperclip's security measures.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1637_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Base controller for a Ruby on Rails application, handling user sessions and themes.",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4330_0.go",
+            "runs": [
+            ],
+            "language": "Go",
+            "purpose": "Terminates a process by sending SIGTERM signal",
+            "reasoning": "No convincing vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4029_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Dump and die all user records from the database",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1006_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5536_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Password reset form handling",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to improper sanitization of URL parameters.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 1,
+                                        "snippet": "<form action=\"<?php echo 'resetpassword.php?user='.htmlentities($_GET['user']).'&token='.htmlentities($_GET['token']); ?>\" method=\"post\">"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3889_0.java",
+            "runs": [
+            ],
+            "language": "Java",
+            "purpose": "Custom WebViewClient to handle URL loading.",
+            "reasoning": "The code is vulnerable to URL Redirection to untrusted sites.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 11,
+                                        "endLine": 17,
+                                        "snippet": "    @Override\n    public boolean shouldOverrideUrlLoading(WebView view, String url) {\n        Uri uri = Uri.parse(url);\n        if (uri.getHost() != null && uri.getHost().endsWith(\".example.com\")) {\n            return false;\n        }\n"
+                                    }
+                                }
+                            ],
+                            "message": "URL Redirection to untrusted site"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4267_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles HTTP URLs conversion to HTTPS and serves a playlist file.",
+            "reasoning": "The source code is vulnerable to an Open Redirect due to unsanitized user input in URL redirection.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 26,
+                                        "snippet": " */\nif (!filter_var($_GET['livelink'], FILTER_VALIDATE_URL) && preg_match(\"/^http.*/i\", $_GET['livelink'])) {\n    echo \"Invalid Link\";\n    exit;\n}\nheader(\"Content-Type: video/vnd.mpegurl\");\nheader(\"Content-Disposition: attachment;filename=playlist.m3u\");\n$content = url_get_contents($_GET['livelink']);\n$pathinfo = pathinfo($_GET['livelink']); \nforeach (preg_split(\"/((\\r?\\n)|(\\r\\n?))/\", $content) as $line) {"
+                                    }
+                                }
+                            ],
+                            "message": "Open Redirect"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_2501_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Check if an IP or hostname resolves to a private address",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4130_0.h",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2885_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Defines constants for the phpwcms content management system versioning.",
+            "reasoning": "No executable code or vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1750_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Generates a color histogram from an image.",
+            "reasoning": "The use of `shellescape` mitigates command injection, no convincing vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1974_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Sets or gets an object field value, with restrictions on magical attributes.",
+            "reasoning": "The code properly restricts setting '__proto__', 'constructor', and 'prototype', mitigating prototype pollution.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4339_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Sanitizes sensitive information from environment variables in output.",
+            "reasoning": "No convincing vulnerabilities due to controlled use of regular expressions and external inputs.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5536_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "A form for resetting user passwords",
+            "reasoning": "The source code is vulnerable to URL manipulation due to direct inclusion of QUERY_STRING.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 1,
+                                        "snippet": "<form action=\"<?php echo 'resetpassword.php?'.$_SERVER['QUERY_STRING']; ?>\" method=\"post\">"
+                                    }
+                                }
+                            ],
+                            "message": "URL Manipulation"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1007_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_2885_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Defines constants for the phpwcms content management system versioning.",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4267_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles HTTP URLs conversion into HTTPS for video content.",
+            "reasoning": "The source code is vulnerable to Local File Inclusion (LFI) due to unsanitized user input in the 'livelink' GET parameter.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 14,
+                                        "snippet": " */"
+                                    }
+                                }
+                            ],
+                            "message": "Local File Inclusion"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1006_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1540_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Image cropping functionality for Paperclip library",
+            "reasoning": "No convincing vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1485_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Generates performance graphs for monitoring data",
+            "reasoning": "The source code is vulnerable to Command Injection due to improper sanitization of user-supplied input.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 263,
+                                        "endLine": 263,
+                                        "snippet": "    $rrd_time2 = str_replace(\":\", \"\\:\", $rrd_time2);"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1637_0.rb",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4330_0.go",
+            "runs": [
+            ],
+            "language": "Go",
+            "purpose": "Terminates a process or sends SIGTERM based on environment",
+            "reasoning": "Potential misuse of syscall.Kill for negative pgid without validation could lead to unintended signal sending.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 20,
+                                        "snippet": "\t\tExit(err.Error())\n\t}\n"
+                                    }
+                                }
+                            ],
+                            "message": "Misuse of syscall.Kill"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_5145_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles validation for PhpMyAdmin setup configurations.",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to echoing unfiltered user input.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 22,
+                                        "snippet": "$values = json_decode($vals);"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_5184_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3990_0.go",
+            "runs": [
+            ],
+            "language": "Go",
+            "purpose": "Protects against open-redirect vulnerabilities by sanitizing URLs.",
+            "reasoning": "The source code effectively mitigates open-redirect vulnerabilities by ensuring the path starts with a slash and cleaning the path. No convincing vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1154_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Secure file download script",
+            "reasoning": "The script directly uses user input ($_GET[\"f\"]) in file operations, leading to potential Directory Traversal.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 20,
+                                        "endLine": 20,
+                                        "snippet": "\tPortions created by the Initial Developer are Copyright (C) 2008-2012"
+                                    }
+                                }
+                            ],
+                            "message": "Directory Traversal"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_2892_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Defines configuration for downloading Python and Visual C++ Build Tools.",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_555_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Deeply mixes objects by copying properties.",
+            "reasoning": "The check against '__proto__' prevents prototype pollution, making it secure.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3806_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Base controller setup for a Rails application",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1485_0.php",
+            "runs": [
+            ],
+            "language": "Unknown",
+            "purpose": "Source code not provided",
+            "reasoning": "No source code provided to analyze.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5145_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Validates configuration values for PhpMyAdmin setup",
+            "reasoning": "Direct use of \\\\_POST data without proper validation or sanitization may lead to XSS or Injection attacks.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 16,
+                                        "snippet": "$validators = array();\nrequire './libraries/config/Validator.php';\n"
+                                    }
+                                }
+                            ],
+                            "message": "Potential XSS via \\\\_POST['id']"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 17,
+                                        "endLine": 19,
+                                        "snippet": "PMA_headerJSON();\n\n$ids = PMA_isValid($_POST['id'], 'scalar') ? $_POST['id'] : null;"
+                                    }
+                                }
+                            ],
+                            "message": "Potential Injection via \\\\_POST['values']"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_559_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Merge default properties into a target object, recursively.",
+            "reasoning": "The check against '__proto__' prevents prototype pollution, making it secure.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1154_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Securely download files based on user input",
+            "reasoning": "The source code directly uses user input in the file download process without proper validation, leading to a potential Directory Traversal vulnerability.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 20,
+                                        "endLine": 20,
+                                        "snippet": "\tPortions created by the Initial Developer are Copyright (C) 2008-2012"
+                                    }
+                                }
+                            ],
+                            "message": "Directory Traversal"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3699_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Encryption module supporting AES encryption and decryption.",
+            "reasoning": "The reuse of the counter with an initial value of 0 in AES.MODE_CTR could lead to nonce reuse vulnerabilities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 20,
+                                        "endLine": 22,
+                                        "snippet": "    def aesEncrypt(data, key):\n        cipher = AES.new(key, AES.MODE_CTR,\n                         counter=Counter.new(128, initial_value=0))"
+                                    }
+                                }
+                            ],
+                            "message": "Nonce reuse in AES.MODE_CTR"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 25,
+                                        "endLine": 27,
+                                        "snippet": "\n    def aesDecrypt(data, key):\n        cipher = AES.new(key, AES.MODE_CTR,"
+                                    }
+                                }
+                            ],
+                            "message": "Nonce reuse in AES.MODE_CTR"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4930_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Lint SQL queries using an AJAX request to a PHP backend.",
+            "reasoning": "The source code directly includes user input in the AJAX request, potentially leading to CSRF if not properly handled.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 26,
+                                        "snippet": "        }\n\n        updateLinting(cm, found);\n    }\n"
+                                    }
+                                }
+                            ],
+                            "message": "Potential CSRF vulnerability"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        }
+    ],
+    "statistics": {
+        "targetFiles": 62,
+        "scannedFiles": 62,
+        "vulnerableFiles": 22,
+        "scanStartTime": "2024-01-30T21:09:11.673",
+        "scanEndTime": "2024-01-30T21:09:26.145",
+        "scanDurationSeconds": 15
+    },
+    "evaluation": {
+        "positives": 31,
+        "negatives": 31,
+        "truePositives": 13,
+        "falsePositives": 9,
+        "trueNegatives": 22,
+        "falseNegatives": 18,
+        "accuracy": 0.5645161290322581,
+        "precision": 0.5909090909090909,
+        "recall": 0.41935483870967744,
+        "f1": 0.4905660377358491
+    }
+}

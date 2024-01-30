@@ -1,0 +1,129 @@
+{
+    "fileScanResults": [
+        {
+            "filepath": "./good_4029_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Unable to determine without more context",
+            "reasoning": "No vulnerabilities found due to lack of code.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1007_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4029_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Dumps all user records from the database",
+            "reasoning": "No explicit vulnerabilities found without context.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1006_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1007_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1006_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1485_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Generates performance graphs for monitoring data",
+            "reasoning": "The source code is vulnerable to Command Injection due to improper sanitization of user-supplied input.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 242,
+                                        "endLine": 242,
+                                        "snippet": "                \"Unreach\"=>\"#818285\", \"Ok\"=>\"#88b917\", \"Warn\"=>\"#ff9a13\","
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1485_0.php",
+            "runs": [
+            ],
+            "language": "Unknown",
+            "purpose": "No source code provided",
+            "reasoning": "No source code to analyze for vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        }
+    ],
+    "statistics": {
+        "targetFiles": 8,
+        "scannedFiles": 8,
+        "vulnerableFiles": 1,
+        "scanStartTime": "2024-01-30T21:05:35.092",
+        "scanEndTime": "2024-01-30T21:05:42.205",
+        "scanDurationSeconds": 7
+    },
+    "evaluation": {
+        "positives": 4,
+        "negatives": 4,
+        "truePositives": 1,
+        "falsePositives": 0,
+        "trueNegatives": 4,
+        "falseNegatives": 3,
+        "accuracy": 0.625,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+    }
+}

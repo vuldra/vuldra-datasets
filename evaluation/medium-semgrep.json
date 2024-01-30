@@ -1,0 +1,615 @@
+{
+    "fileScanResults": [
+        {
+            "filepath": "./bad_3810_0.php",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 4,
+                                        "endLine": 4,
+                                        "snippet": "shell_exec(\"/usr/sbin/oo-restorer-wrapper.sh $uuid\");"
+                                    }
+                                }
+                            ],
+                            "message": "Executing non-constant commands. This can lead to command injection.",
+                            "ruleId": "php.lang.security.exec-use.exec-use"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4323_0.cpp",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4682_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1750_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 4,
+                                        "endLine": 4,
+                                        "snippet": "      output = `convert #{image_path} -resize 400x400 -format %c -dither None -quantize YIQ -colors #{colors} -depth #{depth} histogram:info:-`"
+                                    }
+                                }
+                            ],
+                            "message": "Detected non-static command inside `...`. If unverified user data can reach this call site, this is a code injection vulnerability. A malicious actor can inject a malicious script to execute arbitrary code.",
+                            "ruleId": "ruby.lang.security.dangerous-subshell.dangerous-subshell"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1974_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4339_0.js",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 19,
+                                        "snippet": "  const regexp = new RegExp(\n    toReplace\n      .map((envVar) => `${escapeRegExp(env[envVar])}|${encodeURI(escapeRegExp(env[envVar]))}`)\n      .join('|'),\n    'g'\n  );"
+                                    }
+                                }
+                            ],
+                            "message": "RegExp() called with a `envVar` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+                            "ruleId": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 19,
+                                        "snippet": "  const regexp = new RegExp(\n    toReplace\n      .map((envVar) => `${escapeRegExp(env[envVar])}|${encodeURI(escapeRegExp(env[envVar]))}`)\n      .join('|'),\n    'g'\n  );"
+                                    }
+                                }
+                            ],
+                            "message": "RegExp() called with a `env` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+                            "ruleId": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_5184_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3747_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_555_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2501_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3810_0.php",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 5,
+                                        "endLine": 5,
+                                        "snippet": "    shell_exec(\"/usr/sbin/oo-restorer-wrapper.sh $uuid\");"
+                                    }
+                                }
+                            ],
+                            "message": "Executing non-constant commands. This can lead to command injection.",
+                            "ruleId": "php.lang.security.exec-use.exec-use"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4923_0.phtml",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4682_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4323_0.cpp",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_559_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3889_0.java",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3747_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3699_0.py",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4930_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4029_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3806_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 8,
+                                        "snippet": "class ApplicationController < ActionController::Base\n  include Console::Rescue\n\n  protect_from_forgery\n\n  protected\n    def handle_unverified_request\n      raise Console::AccessDenied, \"Request authenticity token does not match session #{session.inspect}\""
+                                    }
+                                }
+                            ],
+                            "message": "Detected controller which does not enable cross-site request forgery protections using 'protect_from_forgery'. Add 'protect_from_forgery :with => :exception' to your controller class.",
+                            "ruleId": "ruby.lang.security.missing-csrf-protection.missing-csrf-protection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4130_0.h",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3990_0.go",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4923_0.phtml",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2892_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1007_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1540_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1637_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 2,
+                                        "endLine": 26,
+                                        "snippet": "  class ApplicationController < ActionController::Base\n    protect_from_forgery\n    \n    include ApplicationHelper\n\n    private\n\n    def current_ability\n      @current_ability ||= Ability.new(current_user)\n    end"
+                                    }
+                                }
+                            ],
+                            "message": "Detected controller which does not enable cross-site request forgery protections using 'protect_from_forgery'. Add 'protect_from_forgery :with => :exception' to your controller class.",
+                            "ruleId": "ruby.lang.security.missing-csrf-protection.missing-csrf-protection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4330_0.go",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4029_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1006_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5536_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3889_0.java",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4267_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_2501_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4130_0.h",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2885_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1750_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 6,
+                                        "endLine": 6,
+                                        "snippet": "      output = `convert #{image_path.shellescape} -resize 400x400 -format %c -dither None -quantize YIQ -colors #{colors.to_i} -depth #{depth.to_i} histogram:info:-`"
+                                    }
+                                }
+                            ],
+                            "message": "Detected non-static command inside `...`. If unverified user data can reach this call site, this is a code injection vulnerability. A malicious actor can inject a malicious script to execute arbitrary code.",
+                            "ruleId": "ruby.lang.security.dangerous-subshell.dangerous-subshell"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1974_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4339_0.js",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 14,
+                                        "snippet": "  const regexp = new RegExp(toReplace.map((envVar) => escapeRegExp(env[envVar])).join('|'), 'g');"
+                                    }
+                                }
+                            ],
+                            "message": "RegExp() called with a `envVar` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+                            "ruleId": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 14,
+                                        "snippet": "  const regexp = new RegExp(toReplace.map((envVar) => escapeRegExp(env[envVar])).join('|'), 'g');"
+                                    }
+                                }
+                            ],
+                            "message": "RegExp() called with a `env` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+                            "ruleId": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_5536_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1007_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_2885_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4267_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1006_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1540_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1485_0.php",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 296,
+                                        "endLine": 296,
+                                        "snippet": "    $fp = popen($command_line, 'r');"
+                                    }
+                                }
+                            ],
+                            "message": "Executing non-constant commands. This can lead to command injection.",
+                            "ruleId": "php.lang.security.exec-use.exec-use"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 296,
+                                        "endLine": 296,
+                                        "snippet": "    $fp = popen($command_line, 'r');"
+                                    }
+                                }
+                            ],
+                            "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
+                            "ruleId": "php.lang.security.tainted-exec.tainted-exec"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1637_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4330_0.go",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5145_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5184_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3990_0.go",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1154_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_2892_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_555_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3806_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 4,
+                                        "snippet": "class ApplicationController < ActionController::Base\n  include Console::Rescue\n\n  protect_from_forgery"
+                                    }
+                                }
+                            ],
+                            "message": "Detected controller which does not enable cross-site request forgery protections using 'protect_from_forgery'. Add 'protect_from_forgery :with => :exception' to your controller class.",
+                            "ruleId": "ruby.lang.security.missing-csrf-protection.missing-csrf-protection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1485_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5145_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_559_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1154_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3699_0.py",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4930_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        }
+    ],
+    "statistics": {
+        "targetFiles": 62,
+        "scannedFiles": 62,
+        "vulnerableFiles": 10,
+        "scanStartTime": "2024-01-30T17:48:01.306",
+        "scanEndTime": "2024-01-30T17:48:08.679",
+        "scanDurationSeconds": 7
+    },
+    "evaluation": {
+        "positives": 31,
+        "negatives": 31,
+        "truePositives": 5,
+        "falsePositives": 5,
+        "trueNegatives": 26,
+        "falseNegatives": 26,
+        "accuracy": 0.5,
+        "precision": 0.5,
+        "recall": 0.16129032258064516,
+        "f1": 0.24390243902439024
+    }
+}
