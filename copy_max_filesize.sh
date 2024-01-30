@@ -23,7 +23,24 @@ if [ ! -d "$TARGET_DIR" ]; then
     mkdir -p "$TARGET_DIR"
 fi
 
-# Copy files that are less than the specified maximum file size
-find "$SOURCE_DIR" -type f -size -"${MAX_SIZE}"k -exec cp {} "$TARGET_DIR" \;
+# Function to copy good and corresponding bad files if the good file is smaller than MAX_SIZE
+copy_files_if_good_is_small() {
+    local good_file="$1"
+    local bad_file="${good_file/good_/bad_}"
+
+    if [ -f "$bad_file" ]; then
+        # Good file is smaller than MAX_SIZE, so copy both good and bad files
+        cp "$good_file" "$TARGET_DIR"
+        cp "$bad_file" "$TARGET_DIR"
+        echo "Copied $good_file and $bad_file to $TARGET_DIR"
+    else
+        echo "No corresponding bad file for $good_file"
+    fi
+}
+
+# Find all good files that are smaller than the specified maximum file size
+find "$SOURCE_DIR" -type f -name "good_*" -size -${MAX_SIZE} | while read good_file; do
+    copy_files_if_good_is_small "$good_file"
+done
 
 echo "Copy complete."
