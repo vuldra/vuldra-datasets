@@ -4,9 +4,10 @@
 
 All vuldra datasets are based on the [CrossVul dataset](https://zenodo.org/records/4734050)
 by [Nikitopoulos et al.](https://dl.acm.org/doi/10.1145/3468264.3473122) The Vuldra datasets are minimised versions of
-the of the CrossVul dataset, containing only good/bad sample pairs that can be associated with commits from open source
+the CrossVul dataset, containing only good/bad sample pairs that can be associated with commits from open source
 projects that have patched vulnerabilities in a single file. The datasets were generated using the provided bash
-scripts and are sorted by the size of each file.
+scripts and are sorted by the size of each file. Like in the CrossVul dataset, files labeled as good_* are the patched
+version of files labeled as bad_*.
 
 | Dataset                    | Description                          | Good samples | Bad samples | Total disk size |
 |----------------------------|--------------------------------------|--------------|-------------|-----------------|
