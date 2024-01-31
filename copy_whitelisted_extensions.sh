@@ -1,14 +1,9 @@
 #!/usr/bin/env bash
 
-# Function to show usage
-usage() {
+# Check the number of arguments provided
+if [ "$#" -ne 2 ]; then
     echo "Usage: $0 source-directory target-directory"
     exit 1
-}
-
-# Check the number of arguments provided
-if [ "$#" -lt 2 ] || [ "$#" -gt 2 ]; then
-    usage
 fi
 
 # Assign the source and target directories to variables
@@ -21,8 +16,11 @@ if [ ! -d "$SOURCE_DIR" ]; then
     exit 1
 fi
 
-# Create the target directory if it doesn't exist
-mkdir -p "$TARGET_DIR"
+# Check if target directory exists, if not create it
+if [ ! -d "$TARGET_DIR" ]; then
+    echo "Target directory '$TARGET_DIR' does not exist. Creating it now."
+    mkdir -p "$TARGET_DIR"
+fi
 
 # Define an array of file extensions
 declare -a EXTENSIONS=(

@@ -23,7 +23,6 @@ if [ ! -d "$TARGET_DIR" ]; then
     mkdir -p "$TARGET_DIR"
 fi
 
-# Function to copy good and corresponding bad files if the good file is smaller than MAX_SIZE
 copy_files_if_good_is_small() {
     local good_file="$1"
     local bad_file="${good_file/good_/bad_}"
