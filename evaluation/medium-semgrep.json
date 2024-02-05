@@ -25,13 +25,49 @@
             "isVulnerable": true
         },
         {
+            "filepath": "./good_1464_0.phtml",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4636_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5818_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_4323_0.cpp",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
+            "filepath": "./good_2495_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./bad_4682_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5076_0.py",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_558_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -62,6 +98,12 @@
         },
         {
             "filepath": "./bad_1974_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_556_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -104,13 +146,123 @@
             "isVulnerable": true
         },
         {
+            "filepath": "./good_4928_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_5184_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
+            "filepath": "./good_549_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 25,
+                                        "endLine": 25,
+                                        "snippet": "    content_tag(:ul) do"
+                                    }
+                                }
+                            ],
+                            "message": "'content_tag()' bypasses HTML escaping for some portion of the content. If external data can reach here, this exposes your application to cross-site scripting (XSS) attacks. Ensure no external data reaches here. If you must do this, create your HTML manually and use 'html_safe'. Ensure no external data enters the HTML-safe string!",
+                            "ruleId": "ruby.rails.security.audit.xss.avoid-content-tag.avoid-content-tag"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 27,
+                                        "endLine": 27,
+                                        "snippet": "        concat(content_tag(:li, tag.name))"
+                                    }
+                                }
+                            ],
+                            "message": "'content_tag()' bypasses HTML escaping for some portion of the content. If external data can reach here, this exposes your application to cross-site scripting (XSS) attacks. Ensure no external data reaches here. If you must do this, create your HTML manually and use 'html_safe'. Ensure no external data enters the HTML-safe string!",
+                            "ruleId": "ruby.rails.security.audit.xss.avoid-content-tag.avoid-content-tag"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 12,
+                                        "endLine": 12,
+                                        "snippet": "    model.tags.inject(\"\".html_safe) do |out, tag|"
+                                    }
+                                }
+                            ],
+                            "message": "'html_safe()' does not make the supplied string safe. 'html_safe()' bypasses HTML escaping. If external data can reach here, this exposes your application to cross-site scripting (XSS) attacks. Ensure no external data reaches here.",
+                            "ruleId": "ruby.rails.security.audit.xss.avoid-html-safe.avoid-html-safe"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
             "filepath": "./good_3747_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1862_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_884_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3798_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3134_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5159_0.phtml",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4542_0.py",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_980_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4104_0.go",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4686_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -158,6 +310,12 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./bad_4687_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_4682_0.php",
             "vulnerabilities": [
             ],
@@ -165,6 +323,140 @@
         },
         {
             "filepath": "./bad_4323_0.cpp",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_378_0.php",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 18,
+                                        "snippet": "\t\t\tif (file_exists ('layouts/' . $_GET['layout'] . '.html')) {"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 19,
+                                        "endLine": 19,
+                                        "snippet": "\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_GET['layout'] . '.html');"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 20,
+                                        "endLine": 20,
+                                        "snippet": "\t\t\t} elseif (file_exists ('layouts/' . $_GET['layout'] . '/' . $_GET['layout'] . '.html')) {"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 21,
+                                        "endLine": 21,
+                                        "snippet": "\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_GET['layout'] . '/' . $_GET['layout'] . '.html');"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 26,
+                                        "endLine": 26,
+                                        "snippet": "\t\t$page->layout = str_replace ('</head>', '<style>' . strip_tags (file_get_contents ($_GET['css'])) . '</style></head>', $page->layout);"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 31,
+                                        "endLine": 31,
+                                        "snippet": "\t\t\tif (file_exists ('layouts/' . $_POST['layout'] . '.html')) {"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 32,
+                                        "endLine": 32,
+                                        "snippet": "\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_POST['layout'] . '.html');"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 33,
+                                        "endLine": 33,
+                                        "snippet": "\t\t\t} elseif (file_exists ('layouts/' . $_POST['layout'] . '/' . $_POST['layout'] . '.html')) {"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 34,
+                                        "endLine": 34,
+                                        "snippet": "\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_POST['layout'] . '/' . $_POST['layout'] . '.html');"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3134_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -182,13 +474,55 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./bad_4928_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./bad_3747_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
+            "filepath": "./good_3798_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_2003_0.py",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_784_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1464_0.phtml",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./bad_3699_0.py",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3738_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5706_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -230,7 +564,160 @@
             "isVulnerable": true
         },
         {
+            "filepath": "./bad_3236_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1514_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_4130_0.h",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2025_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 26,
+                                        "endLine": 26,
+                                        "snippet": "         attribute_value = '{MD5}' + Base64.encode64(Digest::MD5.digest(str)).chomp! "
+                                    }
+                                }
+                            ],
+                            "message": "Should not use md5 to generate hashes. md5 is proven to be vulnerable through the use of brute-force attacks. Could also result in collisions, leading to potential collision attacks. Use SHA256 or other hashing functions instead.",
+                            "ruleId": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 28,
+                                        "endLine": 28,
+                                        "snippet": "         attribute_value = '{SHA}' + Base64.encode64(Digest::SHA1.digest(str)).chomp! "
+                                    }
+                                }
+                            ],
+                            "message": "Should not use SHA1 to generate hashes. There is a proven SHA1 hash collision by Google, which could lead to vulnerabilities. Use SHA256, SHA3 or other hashing functions instead.",
+                            "ruleId": "ruby.lang.security.weak-hashes-sha1.weak-hashes-sha1"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 31,
+                                        "endLine": 31,
+                                        "snippet": "         attribute_value = '{SSHA}' + Base64.encode64(Digest::SHA1.digest(str + salt) + salt).chomp!"
+                                    }
+                                }
+                            ],
+                            "message": "Should not use SHA1 to generate hashes. There is a proven SHA1 hash collision by Google, which could lead to vulnerabilities. Use SHA256, SHA3 or other hashing functions instead.",
+                            "ruleId": "ruby.lang.security.weak-hashes-sha1.weak-hashes-sha1"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_5159_0.phtml",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_88_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4357_0.js",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 18,
+                                        "snippet": "            if (/\\d+/.test(element.textContent)) element.outerHTML = element.textContent;"
+                                    }
+                                }
+                            ],
+                            "message": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities",
+                            "ruleId": "javascript.browser.security.insecure-document-method.insecure-document-method"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_5012_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1400_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 26,
+                                        "endLine": 26,
+                                        "snippet": "      redirect_to params[:ref]"
+                                    }
+                                }
+                            ],
+                            "message": "When a redirect uses user input, a malicious user can spoof a website under a trusted URL or access restricted parts of a site. When using user-supplied values, sanitize the value before using it for the redirect.",
+                            "ruleId": "ruby.rails.security.audit.xss.avoid-redirect.avoid-redirect"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 26,
+                                        "endLine": 26,
+                                        "snippet": "      redirect_to params[:ref]"
+                                    }
+                                }
+                            ],
+                            "message": "Found potentially unsafe handling of redirect behavior params[:ref]. Do not pass `params` to `redirect_to` without the `:only_path => true` hash value.",
+                            "ruleId": "ruby.rails.security.brakeman.check-redirect-to.check-redirect-to"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3738_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5706_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -248,7 +735,19 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./bad_4442_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./bad_2892_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1921_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -264,6 +763,30 @@
             "vulnerabilities": [
             ],
             "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5859_0.js",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 70,
+                                        "endLine": 70,
+                                        "snippet": "    child_process.exec(args.join(' '), callback)"
+                                    }
+                                }
+                            ],
+                            "message": "Detected calls to child_process from a function argument `msg`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensure user input is correctly sanitized or sandboxed. ",
+                            "ruleId": "javascript.lang.security.detect-child-process.detect-child-process"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
         },
         {
             "filepath": "./good_1637_0.rb",
@@ -302,10 +825,162 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./good_4445_0.java",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3236_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1514_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./bad_1006_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_784_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_378_0.php",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 18,
+                                        "snippet": "\t\t\tif (file_exists ('layouts/' . $_GET['layout'] . '.html')) {"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 19,
+                                        "endLine": 19,
+                                        "snippet": "\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_GET['layout'] . '.html');"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 20,
+                                        "endLine": 20,
+                                        "snippet": "\t\t\t} elseif (file_exists ('layouts/' . $_GET['layout'] . '/' . $_GET['layout'] . '.html')) {"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 21,
+                                        "endLine": 21,
+                                        "snippet": "\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_GET['layout'] . '/' . $_GET['layout'] . '.html');"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 26,
+                                        "endLine": 26,
+                                        "snippet": "\t\t$page->layout = str_replace ('</head>', '<style>' . file_get_contents ($_GET['css']) . '</style></head>', $page->layout);"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 31,
+                                        "endLine": 31,
+                                        "snippet": "\t\t\tif (file_exists ('layouts/' . $_POST['layout'] . '.html')) {"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 32,
+                                        "endLine": 32,
+                                        "snippet": "\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_POST['layout'] . '.html');"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 33,
+                                        "endLine": 33,
+                                        "snippet": "\t\t\t} elseif (file_exists ('layouts/' . $_POST['layout'] . '/' . $_POST['layout'] . '.html')) {"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 34,
+                                        "endLine": 34,
+                                        "snippet": "\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_POST['layout'] . '/' . $_POST['layout'] . '.html');"
+                                    }
+                                }
+                            ],
+                            "message": "File name based on user input risks server-side request forgery.",
+                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
         },
         {
             "filepath": "./good_5536_0.php",
@@ -320,7 +995,68 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./bad_3775_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1132_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_8_0.py",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 15,
+                                        "endLine": 15,
+                                        "snippet": "        classBase = eval(data[\"\"] + \".\" + data[\"\"].title())"
+                                    }
+                                }
+                            ],
+                            "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+                            "ruleId": "python.lang.security.audit.eval-detected.eval-detected"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 42,
+                                        "endLine": 42,
+                                        "snippet": "            import_module(\".\" + splitted[0], \"messagetypes\")"
+                                    }
+                                }
+                            ],
+                            "message": "Untrusted user input in `importlib.import_module()` function allows an attacker to load arbitrary code. Avoid dynamic values in `importlib.import_module()` or use a whitelist to prevent running untrusted code.",
+                            "ruleId": "python.lang.security.audit.non-literal-import.non-literal-import"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4104_0.go",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./bad_4267_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3883_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -333,6 +1069,18 @@
         },
         {
             "filepath": "./bad_4130_0.h",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_88_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1418_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -374,6 +1122,43 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./good_8_0.py",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 15,
+                                        "endLine": 15,
+                                        "snippet": "        m = import_module(\"messagetypes.\" + data[\"\"])"
+                                    }
+                                }
+                            ],
+                            "message": "Untrusted user input in `importlib.import_module()` function allows an attacker to load arbitrary code. Avoid dynamic values in `importlib.import_module()` or use a whitelist to prevent running untrusted code.",
+                            "ruleId": "python.lang.security.audit.non-literal-import.non-literal-import"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 43,
+                                        "endLine": 43,
+                                        "snippet": "            import_module(\".\" + splitted[0], \"messagetypes\")"
+                                    }
+                                }
+                            ],
+                            "message": "Untrusted user input in `importlib.import_module()` function allows an attacker to load arbitrary code. Avoid dynamic values in `importlib.import_module()` or use a whitelist to prevent running untrusted code.",
+                            "ruleId": "python.lang.security.audit.non-literal-import.non-literal-import"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
             "filepath": "./bad_4339_0.js",
             "vulnerabilities": [
                 {
@@ -411,7 +1196,37 @@
             "isVulnerable": true
         },
         {
+            "filepath": "./good_3775_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_884_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1132_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4542_0.py",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./bad_5536_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_980_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -423,13 +1238,43 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./good_1418_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4636_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_2885_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
+            "filepath": "./bad_2495_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_4267_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3883_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5076_0.py",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -484,6 +1329,12 @@
             "isVulnerable": true
         },
         {
+            "filepath": "./good_5859_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./bad_1637_0.rb",
             "vulnerabilities": [
             ],
@@ -496,13 +1347,142 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./bad_4445_0.java",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5818_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_5145_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
+            "filepath": "./good_558_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1400_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 26,
+                                        "endLine": 26,
+                                        "snippet": "      redirect_to params[:ref]"
+                                    }
+                                }
+                            ],
+                            "message": "When a redirect uses user input, a malicious user can spoof a website under a trusted URL or access restricted parts of a site. When using user-supplied values, sanitize the value before using it for the redirect.",
+                            "ruleId": "ruby.rails.security.audit.xss.avoid-redirect.avoid-redirect"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 26,
+                                        "endLine": 26,
+                                        "snippet": "      redirect_to params[:ref]"
+                                    }
+                                }
+                            ],
+                            "message": "Found potentially unsafe handling of redirect behavior params[:ref]. Do not pass `params` to `redirect_to` without the `:only_path => true` hash value.",
+                            "ruleId": "ruby.rails.security.brakeman.check-redirect-to.check-redirect-to"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4408_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_556_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_549_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 25,
+                                        "endLine": 25,
+                                        "snippet": "    content_tag(:ul) do"
+                                    }
+                                }
+                            ],
+                            "message": "'content_tag()' bypasses HTML escaping for some portion of the content. If external data can reach here, this exposes your application to cross-site scripting (XSS) attacks. Ensure no external data reaches here. If you must do this, create your HTML manually and use 'html_safe'. Ensure no external data enters the HTML-safe string!",
+                            "ruleId": "ruby.rails.security.audit.xss.avoid-content-tag.avoid-content-tag"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 27,
+                                        "endLine": 27,
+                                        "snippet": "        concat(content_tag(:li, tag.name))"
+                                    }
+                                }
+                            ],
+                            "message": "'content_tag()' bypasses HTML escaping for some portion of the content. If external data can reach here, this exposes your application to cross-site scripting (XSS) attacks. Ensure no external data reaches here. If you must do this, create your HTML manually and use 'html_safe'. Ensure no external data enters the HTML-safe string!",
+                            "ruleId": "ruby.rails.security.audit.xss.avoid-content-tag.avoid-content-tag"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 12,
+                                        "endLine": 12,
+                                        "snippet": "    model.tags.inject(\"\".html_safe) do |out, tag|"
+                                    }
+                                }
+                            ],
+                            "message": "'html_safe()' does not make the supplied string safe. 'html_safe()' bypasses HTML escaping. If external data can reach here, this exposes your application to cross-site scripting (XSS) attacks. Ensure no external data reaches here.",
+                            "ruleId": "ruby.rails.security.audit.xss.avoid-html-safe.avoid-html-safe"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
             "filepath": "./bad_5184_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4083_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1862_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -520,7 +1500,25 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./good_4442_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_2892_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1921_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4686_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -556,13 +1554,87 @@
             "isVulnerable": true
         },
         {
+            "filepath": "./good_2025_0.rb",
+            "vulnerabilities": [
+                {
+                    "tool": "Semgrep OSS",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 26,
+                                        "endLine": 26,
+                                        "snippet": "         attribute_value = '{MD5}' + Base64.encode64(Digest::MD5.digest(str)).chomp! "
+                                    }
+                                }
+                            ],
+                            "message": "Should not use md5 to generate hashes. md5 is proven to be vulnerable through the use of brute-force attacks. Could also result in collisions, leading to potential collision attacks. Use SHA256 or other hashing functions instead.",
+                            "ruleId": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 28,
+                                        "endLine": 28,
+                                        "snippet": "         attribute_value = '{SHA}' + Base64.encode64(Digest::SHA1.digest(str)).chomp! "
+                                    }
+                                }
+                            ],
+                            "message": "Should not use SHA1 to generate hashes. There is a proven SHA1 hash collision by Google, which could lead to vulnerabilities. Use SHA256, SHA3 or other hashing functions instead.",
+                            "ruleId": "ruby.lang.security.weak-hashes-sha1.weak-hashes-sha1"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 31,
+                                        "endLine": 31,
+                                        "snippet": "         attribute_value = '{SSHA}' + Base64.encode64(Digest::SHA1.digest(str + salt) + salt).chomp!"
+                                    }
+                                }
+                            ],
+                            "message": "Should not use SHA1 to generate hashes. There is a proven SHA1 hash collision by Google, which could lead to vulnerabilities. Use SHA256, SHA3 or other hashing functions instead.",
+                            "ruleId": "ruby.lang.security.weak-hashes-sha1.weak-hashes-sha1"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
             "filepath": "./good_1485_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
+            "filepath": "./good_4357_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./bad_5145_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5012_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4687_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2003_0.py",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -586,6 +1658,18 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./good_4408_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4083_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_4930_0.js",
             "vulnerabilities": [
             ],
@@ -593,23 +1677,23 @@
         }
     ],
     "statistics": {
-        "targetFiles": 62,
-        "scannedFiles": 62,
-        "vulnerableFiles": 10,
-        "scanStartTime": "2024-01-30T17:48:01.306",
-        "scanEndTime": "2024-01-30T17:48:08.679",
-        "scanDurationSeconds": 7
+        "targetFiles": 146,
+        "scannedFiles": 146,
+        "vulnerableFiles": 22,
+        "scanStartTime": "2024-02-05T20:10:34.147",
+        "scanEndTime": "2024-02-05T20:10:44.108",
+        "scanDurationSeconds": 10
     },
     "evaluation": {
-        "positives": 31,
-        "negatives": 31,
-        "truePositives": 5,
-        "falsePositives": 5,
-        "trueNegatives": 26,
-        "falseNegatives": 26,
-        "accuracy": 0.5,
-        "precision": 0.5,
-        "recall": 0.16129032258064516,
-        "f1": 0.24390243902439024
+        "positives": 73,
+        "negatives": 73,
+        "truePositives": 12,
+        "falsePositives": 10,
+        "trueNegatives": 63,
+        "falseNegatives": 61,
+        "accuracy": 0.5136986301369864,
+        "precision": 0.5454545454545454,
+        "recall": 0.1643835616438356,
+        "f1": 0.2526315789473684
     }
 }

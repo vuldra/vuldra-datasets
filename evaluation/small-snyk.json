@@ -1,13 +1,193 @@
 {
     "fileScanResults": [
         {
+            "filepath": "./bad_3810_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4323_0.cpp",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4682_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1750_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1974_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4339_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5184_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3747_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_555_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2501_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3810_0.php",
+            "vulnerabilities": [
+                {
+                    "tool": "SnykCode",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 10,
+                                        "endLine": 10,
+                                        "snippet": "    header(\"Location: $proto$host$url\");"
+                                    }
+                                }
+                            ],
+                            "message": "Unsanitized input from an HTTP header flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.",
+                            "ruleId": "php/OR"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4923_0.phtml",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4682_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4323_0.cpp",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_559_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3889_0.java",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3747_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3699_0.py",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4930_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_4029_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
+            "filepath": "./good_3806_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4130_0.h",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3990_0.go",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4923_0.phtml",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2892_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./bad_1007_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1540_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1637_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4330_0.go",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -25,13 +205,171 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./good_5536_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3889_0.java",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4267_0.php",
+            "vulnerabilities": [
+                {
+                    "tool": "SnykCode",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 21,
+                                        "endLine": 21,
+                                        "snippet": "$content = url_get_contents($_GET['livelink']);"
+                                    }
+                                }
+                            ],
+                            "message": "Unsanitized input from an HTTP parameter flows into url_get_contents, where it is used as an URL to perform a request. This may result in a Server-Side Request Forgery vulnerability.",
+                            "ruleId": "php/Ssrf"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 33,
+                                        "endLine": 33,
+                                        "snippet": "    echo $line.PHP_EOL;"
+                                    }
+                                }
+                            ],
+                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
+                            "ruleId": "php/XSS"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_2501_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4130_0.h",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2885_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1750_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1974_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4339_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5536_0.php",
+            "vulnerabilities": [
+                {
+                    "tool": "SnykCode",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 1,
+                                        "snippet": "<form action=\"<?php echo 'resetpassword.php?'.$_SERVER['QUERY_STRING']; ?>\" method=\"post\">"
+                                    }
+                                }
+                            ],
+                            "message": "Unsanitized input from an HTTP header flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
+                            "ruleId": "php/XSS"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
             "filepath": "./good_1007_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
+            "filepath": "./good_2885_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4267_0.php",
+            "vulnerabilities": [
+                {
+                    "tool": "SnykCode",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 21,
+                                        "endLine": 21,
+                                        "snippet": "$content = url_get_contents($_GET['livelink']);"
+                                    }
+                                }
+                            ],
+                            "message": "Unsanitized input from an HTTP parameter flows into url_get_contents, where it is used as an URL to perform a request. This may result in a Server-Side Request Forgery vulnerability.",
+                            "ruleId": "php/Ssrf"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 33,
+                                        "endLine": 33,
+                                        "snippet": "    echo $line.PHP_EOL;"
+                                    }
+                                }
+                            ],
+                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
+                            "ruleId": "php/XSS"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
             "filepath": "./good_1006_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1540_0.rb",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -43,30 +381,114 @@
             "isVulnerable": false
         },
         {
+            "filepath": "./bad_1637_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4330_0.go",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5145_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5184_0.c",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3990_0.go",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1154_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_2892_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_555_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3806_0.rb",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
             "filepath": "./good_1485_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5145_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_559_0.js",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1154_0.php",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3699_0.py",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4930_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         }
     ],
     "statistics": {
-        "targetFiles": 8,
-        "scannedFiles": 8,
-        "vulnerableFiles": 0,
-        "scanStartTime": "2024-01-30T17:44:07.375",
-        "scanEndTime": "2024-01-30T17:44:15.710",
+        "targetFiles": 62,
+        "scannedFiles": 62,
+        "vulnerableFiles": 4,
+        "scanStartTime": "2024-01-30T17:49:00.936",
+        "scanEndTime": "2024-01-30T17:49:08.367",
         "scanDurationSeconds": 8
     },
     "evaluation": {
-        "positives": 4,
-        "negatives": 4,
-        "truePositives": 0,
-        "falsePositives": 0,
-        "trueNegatives": 4,
-        "falseNegatives": 4,
+        "positives": 31,
+        "negatives": 31,
+        "truePositives": 2,
+        "falsePositives": 2,
+        "trueNegatives": 29,
+        "falseNegatives": 29,
         "accuracy": 0.5,
-        "precision": null,
-        "recall": 0.0,
-        "f1": null
+        "precision": 0.5,
+        "recall": 0.06451612903225806,
+        "f1": 0.1142857142857143
     }
 }

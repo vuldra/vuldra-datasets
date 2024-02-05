@@ -1,12 +1,6 @@
 {
     "fileScanResults": [
         {
-            "filepath": "./good_2228_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3870_0.c",
             "vulnerabilities": [
             ],
@@ -25,12 +19,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_5373_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_5756_0.c",
             "vulnerabilities": [
             ],
@@ -38,12 +26,6 @@
         },
         {
             "filepath": "./good_4636_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5426_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -61,12 +43,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_4724_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_2495_0.rb",
             "vulnerabilities": [
             ],
@@ -74,24 +50,6 @@
         },
         {
             "filepath": "./bad_4682_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4938_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5447_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_750_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -110,12 +68,6 @@
         },
         {
             "filepath": "./bad_558_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4601_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -157,18 +109,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_5445_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5635_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_549_0.rb",
             "vulnerabilities": [
             ],
@@ -176,12 +116,6 @@
         },
         {
             "filepath": "./good_3747_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5358_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -205,168 +139,10 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_3235_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 40,
-                                        "endLine": 40,
-                                        "snippet": "\t<div id=\"ccm-<?=$searchInstance?>-overlay-wrapper\">"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 42,
-                                        "endLine": 42,
-                                        "snippet": "<div id=\"ccm-<?=$searchInstance?>-search-overlay\" class=\"ccm-ui\">"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 43,
-                                        "endLine": 43,
-                                        "snippet": "\t<input type=\"hidden\" name=\"dialogAction\" value=\"<?=REL_DIR_FILES_TOOLS_REQUIRED?>/files/search_dialog?ocID=<?=$_REQUEST['ocID']?>&searchInstance=<?=$searchInstance?>&disable_choose=<?=$_REQUEST['disable_choose']?>\" />"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 43,
-                                        "endLine": 43,
-                                        "snippet": "\t<input type=\"hidden\" name=\"dialogAction\" value=\"<?=REL_DIR_FILES_TOOLS_REQUIRED?>/files/search_dialog?ocID=<?=$_REQUEST['ocID']?>&searchInstance=<?=$searchInstance?>&disable_choose=<?=$_REQUEST['disable_choose']?>\" />"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 43,
-                                        "endLine": 43,
-                                        "snippet": "\t<input type=\"hidden\" name=\"dialogAction\" value=\"<?=REL_DIR_FILES_TOOLS_REQUIRED?>/files/search_dialog?ocID=<?=$_REQUEST['ocID']?>&searchInstance=<?=$searchInstance?>&disable_choose=<?=$_REQUEST['disable_choose']?>\" />"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 45,
-                                        "endLine": 45,
-                                        "snippet": "<div class=\"ccm-pane-options\" id=\"ccm-<?=$searchInstance?>-pane-options\">"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 58,
-                                        "endLine": 62,
-                                        "snippet": "print '<script type=\"text/javascript\">\n$(function() {\n\tccm_activateFileManager(\\'' . $alType . '\\', \\'' . $searchInstance . '\\');\n});\n</script>';"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into print, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_441_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_3134_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4974_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 31,
-                                        "endLine": 31,
-                                        "snippet": "    if (! preg_match($valid_match, $_REQUEST['filename'])) {"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized user input from an HTTP parameter flows into preg_match, where it is used to build a regular expression. This may result in a Regular expression Denial of Service attack (reDOS).",
-                            "ruleId": "php/reDOS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 66,
-                                        "endLine": 66,
-                                        "snippet": "    echo $data;"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 73,
-                                        "endLine": 73,
-                                        "snippet": "    echo urldecode($_REQUEST['monitorconfig']);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./good_5159_0.phtml",
@@ -376,18 +152,6 @@
         },
         {
             "filepath": "./bad_1671_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5443_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_1519_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -405,24 +169,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_2754_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4712_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4662_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_980_0.php",
             "vulnerabilities": [
             ],
@@ -430,18 +176,6 @@
         },
         {
             "filepath": "./good_4104_0.go",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5447_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_781_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -460,48 +194,6 @@
         },
         {
             "filepath": "./bad_2501_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_979_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_778_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4601_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 26,
-                                        "endLine": 26,
-                                        "snippet": "        $ret = exec($cmd,$output);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into exec, where it is used to build a shell command. This may result in a Command Injection vulnerability.",
-                            "ruleId": "php/CommandInjection"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_2110_0.rb",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -537,31 +229,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_2228_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5373_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_4512_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5426_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5873_0.rb",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -674,195 +342,13 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./bad_4974_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 31,
-                                        "endLine": 31,
-                                        "snippet": "    if (! preg_match($valid_match, $_REQUEST['filename'])) {"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized user input from an HTTP parameter flows into preg_match, where it is used to build a regular expression. This may result in a Regular expression Denial of Service attack (reDOS).",
-                            "ruleId": "php/reDOS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 66,
-                                        "endLine": 66,
-                                        "snippet": "    echo $data;"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 71,
-                                        "endLine": 71,
-                                        "snippet": "    echo urldecode($_REQUEST['monitorconfig']);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./good_3134_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
-            "filepath": "./good_3235_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 41,
-                                        "endLine": 41,
-                                        "snippet": "\t<div id=\"ccm-<?=$searchInstance?>-overlay-wrapper\">"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 43,
-                                        "endLine": 43,
-                                        "snippet": "<div id=\"ccm-<?=$searchInstance?>-search-overlay\" class=\"ccm-ui\">"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 44,
-                                        "endLine": 44,
-                                        "snippet": "\t<input type=\"hidden\" name=\"dialogAction\" value=\"<?=REL_DIR_FILES_TOOLS_REQUIRED?>/files/search_dialog?ocID=<?=$ocID?>&amp;searchInstance=<?=$searchInstance?>&amp;disable_choose=<?=$disable_choose?>\" />"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 44,
-                                        "endLine": 44,
-                                        "snippet": "\t<input type=\"hidden\" name=\"dialogAction\" value=\"<?=REL_DIR_FILES_TOOLS_REQUIRED?>/files/search_dialog?ocID=<?=$ocID?>&amp;searchInstance=<?=$searchInstance?>&amp;disable_choose=<?=$disable_choose?>\" />"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 44,
-                                        "endLine": 44,
-                                        "snippet": "\t<input type=\"hidden\" name=\"dialogAction\" value=\"<?=REL_DIR_FILES_TOOLS_REQUIRED?>/files/search_dialog?ocID=<?=$ocID?>&amp;searchInstance=<?=$searchInstance?>&amp;disable_choose=<?=$disable_choose?>\" />"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 46,
-                                        "endLine": 46,
-                                        "snippet": "<div class=\"ccm-pane-options\" id=\"ccm-<?=$searchInstance?>-pane-options\">"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 59,
-                                        "endLine": 63,
-                                        "snippet": "print '<script type=\"text/javascript\">\n$(function() {\n\tccm_activateFileManager(\\'' . $alType . '\\', \\'' . $searchInstance . '\\');\n});\n</script>';"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into print, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_4977_0.phtml",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 64,
-                                        "endLine": 66,
-                                        "snippet": "echo PMA_Util::linkOrButton(\n    $url, $title . $order_img, $order_link_params\n);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_559_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5443_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -886,12 +372,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_4662_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_4928_0.php",
             "vulnerabilities": [
             ],
@@ -899,18 +379,6 @@
         },
         {
             "filepath": "./bad_3747_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4746_0.h",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5445_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -934,12 +402,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_5444_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_1464_0.phtml",
             "vulnerabilities": [
             ],
@@ -958,43 +420,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_311_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 57,
-                                        "endLine": 57,
-                                        "snippet": "if (@move_uploaded_file ($_FILES['file']['tmp_name'], $root . $_POST['path'] . '/' . $_FILES['file']['name'])) {"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into move_uploaded_file, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to move arbitrary files.",
-                            "ruleId": "php/PT"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 58,
-                                        "endLine": 58,
-                                        "snippet": "\t@chmod ($root . $_POST['path'] . '/' . $_FILES['file']['name'], 0666);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into chmod, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to manipulate arbitrary files.",
-                            "ruleId": "php/PT"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_3738_0.php",
             "vulnerabilities": [
             ],
@@ -1007,18 +432,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_4136_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5425_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_4930_0.js",
             "vulnerabilities": [
             ],
@@ -1026,18 +439,6 @@
         },
         {
             "filepath": "./good_4029_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_971_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5427_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1164,12 +565,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./good_4560_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_1514_0.php",
             "vulnerabilities": [
             ],
@@ -1182,42 +577,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_708_0.js",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 15,
-                                        "endLine": 15,
-                                        "snippet": "    exec(\"pkg-config \" + opencv + \" \" + flag, function(error, stdout, stderr){"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from a command line argument flows into child_process.exec, where it is used to build a shell command. Forwarding command-line arguments or file paths from the local environment to a function that executes a system command can change the meaning of the command unexpectedly due to unescaped special characters, which may result in a Indirect Command Injection vulnerability.",
-                            "ruleId": "javascript/IndirectCommandInjection"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./good_4350_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4958_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3605_0.php",
             "vulnerabilities": [
             ],
@@ -1225,18 +584,6 @@
         },
         {
             "filepath": "./bad_2025_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5374_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_2196_0.py",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1266,31 +613,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_4438_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_2230_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5446_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_2113_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_1014_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1302,19 +625,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_4834_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_1400_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_3682_0.py",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1327,18 +638,6 @@
         },
         {
             "filepath": "./bad_5706_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4136_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5425_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1357,24 +656,6 @@
         },
         {
             "filepath": "./good_4068_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5444_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5020_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_1999_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1416,46 +697,10 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_1991_1.ts",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4353_0.java",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_1637_0.rb",
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4977_0.phtml",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 68,
-                                        "endLine": 70,
-                                        "snippet": "echo PMA_Util::linkOrButton(\n    $url, $title . $order_img, $order_link_params\n);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./bad_4330_0.go",
@@ -1464,43 +709,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_5374_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_2230_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 7,
-                                        "endLine": 7,
-                                        "snippet": "<meta http-equiv=\"refresh\" content=\"60; url=<?php echo $_SERVER['REQUEST_URI'] ?>\">"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP header flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./good_472_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5446_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1519,12 +728,6 @@
         },
         {
             "filepath": "./bad_4029_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_441_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1651,12 +854,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./good_5427_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_1514_0.php",
             "vulnerabilities": [
             ],
@@ -1664,18 +861,6 @@
         },
         {
             "filepath": "./bad_4622_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4560_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4350_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1844,49 +1029,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_4794_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 62,
-                                        "endLine": 62,
-                                        "snippet": "  include_once($filename);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into include_once, where it is included dynamically. Allowing unvalidated user input to control files that are included dynamically in PHP can lead to malicious code execution.",
-                            "ruleId": "php/FileInclusion"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_10_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3889_0.java",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_3748_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4575_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1913,8 +1056,8 @@
                                     }
                                 }
                             ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
+                            "message": "Sensitive data from a password flows into the echo statement, where it is leaked.",
+                            "ruleId": "php/PrivacyLeak"
                         },
                         {
                             "locations": [
@@ -1926,8 +1069,8 @@
                                     }
                                 }
                             ],
-                            "message": "Sensitive data from a password flows into the echo statement, where it is leaked.",
-                            "ruleId": "php/PrivacyLeak"
+                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
+                            "ruleId": "php/XSS"
                         }
                     ]
                 }
@@ -2026,42 +1169,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_4796_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_979_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5398_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_708_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_2110_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_2325_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_88_0.php",
             "vulnerabilities": [
             ],
@@ -2122,43 +1229,7 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./good_4803_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 68,
-                                        "endLine": 68,
-                                        "snippet": "  include_once($filename);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into include_once, where it is included dynamically. Allowing unvalidated user input to control files that are included dynamically in PHP can lead to malicious code execution.",
-                            "ruleId": "php/FileInclusion"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_2885_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5873_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_1014_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2170,55 +1241,13 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_4834_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4794_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 62,
-                                        "endLine": 62,
-                                        "snippet": "  include_once($filename);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into include_once, where it is included dynamically. Allowing unvalidated user input to control files that are included dynamically in PHP can lead to malicious code execution.",
-                            "ruleId": "php/FileInclusion"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./good_1974_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
-            "filepath": "./good_4575_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_8_0.py",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_3748_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2257,8 +1286,8 @@
                                     }
                                 }
                             ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
+                            "message": "Sensitive data from a password flows into the echo statement, where it is leaked.",
+                            "ruleId": "php/PrivacyLeak"
                         },
                         {
                             "locations": [
@@ -2270,8 +1299,8 @@
                                     }
                                 }
                             ],
-                            "message": "Sensitive data from a password flows into the echo statement, where it is leaked.",
-                            "ruleId": "php/PrivacyLeak"
+                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
+                            "ruleId": "php/XSS"
                         }
                     ]
                 }
@@ -2283,30 +1312,6 @@
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./good_891_0.c",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 130,
-                                        "endLine": 130,
-                                        "snippet": "\texecv(path, (char * const*)argv);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from a command line argument flows into execv, where it is used as a shell command. This may result in a Command Injection vulnerability.",
-                            "ruleId": "cpp/CommandInjection"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./good_499_0.java",
@@ -2359,12 +1364,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./good_1519_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_4542_0.py",
             "vulnerabilities": [
             ],
@@ -2395,12 +1394,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./good_4712_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_980_0.php",
             "vulnerabilities": [
             ],
@@ -2408,12 +1401,6 @@
         },
         {
             "filepath": "./good_1007_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_2325_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2456,30 +1443,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./bad_4803_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 62,
-                                        "endLine": 62,
-                                        "snippet": "  include_once($filename);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into include_once, where it is included dynamically. Allowing unvalidated user input to control files that are included dynamically in PHP can lead to malicious code execution.",
-                            "ruleId": "php/FileInclusion"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./good_1418_0.php",
             "vulnerabilities": [
                 {
@@ -2511,12 +1474,6 @@
         },
         {
             "filepath": "./good_2885_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4724_0.rb",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2571,12 +1528,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_750_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_3883_0.php",
             "vulnerabilities": [
             ],
@@ -2589,19 +1540,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_4796_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_1006_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5398_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2631,12 +1570,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_1991_1.ts",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_1637_0.rb",
             "vulnerabilities": [
             ],
@@ -2650,12 +1583,6 @@
         },
         {
             "filepath": "./bad_5756_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5309_0.cpp",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2694,8 +1621,8 @@
                                     }
                                 }
                             ],
-                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
-                            "ruleId": "php/XSS"
+                            "message": "Sensitive data from a password flows into the echo statement, where it is leaked.",
+                            "ruleId": "php/PrivacyLeak"
                         },
                         {
                             "locations": [
@@ -2707,8 +1634,8 @@
                                     }
                                 }
                             ],
-                            "message": "Sensitive data from a password flows into the echo statement, where it is leaked.",
-                            "ruleId": "php/PrivacyLeak"
+                            "message": "Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).",
+                            "ruleId": "php/XSS"
                         }
                     ]
                 }
@@ -2722,25 +1649,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_4938_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_4618_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_891_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5428_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2764,87 +1673,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_4802_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 68,
-                                        "endLine": 68,
-                                        "snippet": "  include_once($filename);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into include_once, where it is included dynamically. Allowing unvalidated user input to control files that are included dynamically in PHP can lead to malicious code execution.",
-                            "ruleId": "php/FileInclusion"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_4353_0.java",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 98,
-                                        "endLine": 98,
-                                        "snippet": "      SSLContext sslContext = SSLContext.getInstance(\"TLS\");"
-                                    }
-                                }
-                            ],
-                            "message": "Implement secure HTTPS communication. Consider using latest TLSv1.2 instead of javax.net.ssl.SSLContext.getInstance.",
-                            "ruleId": "java/TLS"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 145,
-                                        "endLine": 145,
-                                        "snippet": "      public X509Certificate[] getAcceptedIssuers() {"
-                                    }
-                                }
-                            ],
-                            "message": "TrustManager might be too permissive: all Certificate Authorities are trusted.",
-                            "ruleId": "java/TooPermissiveTrustManager"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 196,
-                                        "endLine": 196,
-                                        "snippet": "      public boolean verify(String host, SSLSession ssl) {"
-                                    }
-                                }
-                            ],
-                            "message": "The verify method always returns true, which means that any hostname is accepted. Such behaviour is insecure.",
-                            "ruleId": "java/TooPermissiveHostnameVerifier"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_1400_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_3682_0.py",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2886,49 +1715,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_5635_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_1152_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 66,
-                                        "endLine": 66,
-                                        "snippet": "\t\t\t\t\t\t@unlink(base64_decode($recording_file_path[$index]));"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into unlink, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to delete arbitrary files.",
-                            "ruleId": "php/PT"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 66,
-                                        "endLine": 66,
-                                        "snippet": "\t\t\t\t\t\t@unlink(base64_decode($recording_file_path[$index]));"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into unlink, where it is used as an URL to perform a request. This may result in a Server-Side Request Forgery vulnerability.",
-                            "ruleId": "php/Ssrf"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_5184_0.c",
             "vulnerabilities": [
             ],
@@ -2947,12 +1733,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_5358_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3990_0.go",
             "vulnerabilities": [
             ],
@@ -2965,37 +1745,13 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_5020_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_2754_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_4442_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_1999_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_4067_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_2827_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -3019,18 +1775,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_781_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_971_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_555_0.js",
             "vulnerabilities": [
             ],
@@ -3038,48 +1782,6 @@
         },
         {
             "filepath": "./bad_3806_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4802_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 62,
-                                        "endLine": 62,
-                                        "snippet": "  include_once($filename);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into include_once, where it is included dynamically. Allowing unvalidated user input to control files that are included dynamically in PHP can lead to malicious code execution.",
-                            "ruleId": "php/FileInclusion"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_5428_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4958_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_778_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -3097,31 +1799,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_10_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_2196_0.py",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5309_0.cpp",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_4357_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4438_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -3181,12 +1859,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_2827_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3288_0.c",
             "vulnerabilities": [
             ],
@@ -3205,73 +1877,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_311_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 57,
-                                        "endLine": 57,
-                                        "snippet": "if (@move_uploaded_file ($_FILES['file']['tmp_name'], $root . $_POST['path'] . '/' . $_FILES['file']['name'])) {"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into move_uploaded_file, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to move arbitrary files.",
-                            "ruleId": "php/PT"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 58,
-                                        "endLine": 58,
-                                        "snippet": "\t@chmod ($root . $_POST['path'] . '/' . $_FILES['file']['name'], 0666);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from an HTTP parameter flows into chmod, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to manipulate arbitrary files.",
-                            "ruleId": "php/PT"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./good_1152_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "SnykCode",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 71,
-                                        "endLine": 71,
-                                        "snippet": "\t\t\t\t\t\t@unlink($call_recording_path.'/'.$call_recording_name);"
-                                    }
-                                }
-                            ],
-                            "message": "Unsanitized input from a database flows into unlink, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to delete arbitrary files.",
-                            "ruleId": "php/PT"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_4746_0.h",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_4083_0.php",
             "vulnerabilities": [
             ],
@@ -3285,23 +1890,23 @@
         }
     ],
     "statistics": {
-        "targetFiles": 308,
-        "scannedFiles": 308,
-        "vulnerableFiles": 40,
-        "scanStartTime": "2024-01-31T11:41:44.973",
-        "scanEndTime": "2024-01-31T11:42:09.017",
-        "scanDurationSeconds": 25
+        "targetFiles": 184,
+        "scannedFiles": 184,
+        "vulnerableFiles": 19,
+        "scanStartTime": "2024-02-05T21:15:13.608",
+        "scanEndTime": "2024-02-05T21:15:43.488",
+        "scanDurationSeconds": 30
     },
     "evaluation": {
-        "positives": 154,
-        "negatives": 154,
-        "truePositives": 23,
-        "falsePositives": 17,
-        "trueNegatives": 137,
-        "falseNegatives": 131,
-        "accuracy": 0.5194805194805194,
-        "precision": 0.575,
-        "recall": 0.14935064935064934,
-        "f1": 0.23711340206185566
+        "positives": 92,
+        "negatives": 92,
+        "truePositives": 11,
+        "falsePositives": 8,
+        "trueNegatives": 84,
+        "falseNegatives": 81,
+        "accuracy": 0.5163043478260869,
+        "precision": 0.5789473684210527,
+        "recall": 0.11956521739130435,
+        "f1": 0.1981981981981982
     }
 }

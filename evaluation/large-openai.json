@@ -1,0 +1,4160 @@
+{
+    "fileScanResults": [
+        {
+            "filepath": "./good_3870_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Decoder for PCX image data.",
+            "reasoning": "The code is vulnerable to buffer overflow due to lack of bounds checking on 'state->x' and 'ptr' manipulations.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 36,
+                                        "endLine": 36,
+                                        "snippet": ""
+                                    }
+                                }
+                            ],
+                            "message": "Buffer Overflow"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 50,
+                                        "endLine": 50,
+                                        "snippet": "\t\tstate->buffer[state->x++] = ptr[1];"
+                                    }
+                                }
+                            ],
+                            "message": "Buffer Overflow"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3810_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Restores a session based on UUID and redirects to a new URL",
+            "reasoning": "The source code directly passes user input to a shell command, leading to a command injection vulnerability. This is exploitable as attackers can inject arbitrary commands.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 4,
+                                        "endLine": 4,
+                                        "snippet": "shell_exec(\"/usr/sbin/oo-restorer-wrapper.sh $uuid\");"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1464_0.phtml",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Renders a login form with optional registration link.",
+            "reasoning": "No direct vulnerabilities found in the provided PHP code snippet. The code primarily deals with form rendering and does not directly process or manipulate user input.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5756_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Manages a proc file for setting/getting a UML exit code.",
+            "reasoning": "The code properly checks user input size and validates it, preventing buffer overflow and injection vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4636_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Validates username, password, and email inputs against specific requirements.",
+            "reasoning": "The code lacks input sanitization for the password, making it potentially vulnerable to injection attacks.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 50,
+                                        "endLine": 50,
+                                        "snippet": "    return new Error(requirements.email.length)"
+                                    }
+                                }
+                            ],
+                            "message": "Lack of password validation"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_5818_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "PNG image processing in FFmpeg.",
+            "reasoning": "The code directly accesses memory using pointers without bounds checking, leading to potential buffer overflow.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 25,
+                                        "endLine": 29,
+                                        "snippet": "#include \"pngdsp.h\"\n\n// 0x7f7f7f7f or 0x7f7f7f7f7f7f7f7f or whatever, depending on the cpu's native arithmetic size\n#define pb_7f (~0UL/255 * 0x7f)\n#define pb_80 (~0UL/255 * 0x80)"
+                                    }
+                                }
+                            ],
+                            "message": "Buffer Overflow"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4323_0.cpp",
+            "runs": [
+            ],
+            "language": "C++",
+            "purpose": "Reads and queues lines from a socket connection.",
+            "reasoning": "No explicit vulnerabilities found in the provided snippet.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_2495_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Text manipulation methods including cleaning, formatting, and calculating Levenshtein distance.",
+            "reasoning": "No convincing vulnerabilities found. The code primarily manipulates strings and calculates distances without executing or evaluating external input.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4682_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Deletes a repository based on user input.",
+            "reasoning": "The code properly checks for user permissions and validates the form security, making it less likely to be exploitable.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5076_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Runs specific fixes based on SELinux alerts",
+            "reasoning": "The code uses subprocess.check_output with unsanitized input, leading to potential command injection.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 15,
+                                        "endLine": 16,
+                                        "snippet": "    @dbus.service.method (\"org.fedoraproject.SetroubleshootFixit\", in_signature='ss', out_signature='s')\n    def run_fix(self, local_id, analysis_id):"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1510_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Sysctl interface to LLC network subsystem.",
+            "reasoning": "No convincing vulnerabilities found in the provided source code.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_558_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Deeply merges objects or arrays.",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1750_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Generates a color histogram from an image.",
+            "reasoning": "The source code is vulnerable to command injection due to unsanitized input in a system call.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 4,
+                                        "endLine": 4,
+                                        "snippet": "      output = `convert #{image_path} -resize 400x400 -format %c -dither None -quantize YIQ -colors #{colors} -depth #{depth} histogram:info:-`"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1974_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Sets or gets an object field value with a default if undefined.",
+            "reasoning": "The code is vulnerable to prototype pollution through the 'field' parameter if it's user-controlled.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 14,
+                                        "snippet": " */"
+                                    }
+                                }
+                            ],
+                            "message": "Prototype Pollution"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_556_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Deeply assigns properties of source objects to a target object.",
+            "reasoning": "The code does not properly check for prototype pollution vulnerabilities, allowing an attacker to modify an object's prototype.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 34,
+                                        "endLine": 36,
+                                        "snippet": " */\n\nfunction extend(target, obj) {"
+                                    }
+                                }
+                            ],
+                            "message": "Prototype Pollution"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4339_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Sanitizes sensitive information from environment variables in output.",
+            "reasoning": "Potential Regular Expression Denial of Service (ReDoS) if attacker controls environment variables with complex patterns.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 16,
+                                        "snippet": "  const regexp = new RegExp(\n    toReplace\n      .map((envVar) => `${escapeRegExp(env[envVar])}|${encodeURI(escapeRegExp(env[envVar]))}`)"
+                                    }
+                                }
+                            ],
+                            "message": "Regular Expression Denial of Service (ReDoS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4928_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Initializes an autoloader for sql-parser components.",
+            "reasoning": "The source code does not directly interact with external input or perform operations that are commonly associated with vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5184_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Tests a crash in image processing with gd library",
+            "reasoning": "No convincing vulnerabilities found. The code properly handles image creation and destruction.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_549_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Generate tag links for CRM assets and dashboard display",
+            "reasoning": "The method 'tags_for_index' is vulnerable to Cross-Site Scripting (XSS) due to improper escaping of user input in 'escape_javascript(query)'.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 20,
+                                        "snippet": "      hashtag = \"##{tag}\"\n      if query.empty?\n        query = hashtag\n      elsif !query.include?(hashtag)\n        query += \" #{hashtag}\"\n      end\n      out << link_to_function(tag, \"crm.search_tagged('#{escape_javascript(query)}', '#{model.class.to_s.tableize}')\", title: tag)"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3747_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Renders a user settings page for OpenID.",
+            "reasoning": "No direct vulnerabilities found in the provided snippet. htmlentities() mitigates XSS.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1862_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Implements AArch64-specific system calls.",
+            "reasoning": "No direct vulnerabilities found in the provided snippet. The code mainly defines system call interfaces without obvious exploitable flaws.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_884_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Allows users to change their password, with admin privileges for broader access.",
+            "reasoning": "The source code is vulnerable to Cross-Site Request Forgery (CSRF) as there is no CSRF token validation for POST requests.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 13,
+                                        "endLine": 25,
+                                        "snippet": "// ============================================================================\n\nif ($_SERVER['REQUEST_METHOD'] == 'POST') {\n\t// Prevent non-administrators to change other users\n\t$username = $_POST['username'];\n\tif ($login->role()!=='admin') {\n\t    $username = $login->username();\n\t}\n\n\tif (changeUserPassword(array("
+                                    }
+                                }
+                            ],
+                            "message": "CSRF Vulnerability"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3798_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Configures WebDAV URL in ownCloud settings via POST request.",
+            "reasoning": "The code directly prints user input and lacks CSRF protection, making it vulnerable to XSS and CSRF attacks.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 19,
+                                        "endLine": 19,
+                                        "snippet": " * You should have received a copy of the GNU Affero General Public"
+                                    }
+                                }
+                            ],
+                            "message": "Reflected Cross-Site Scripting (XSS)"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 19,
+                                        "endLine": 25,
+                                        "snippet": " * You should have received a copy of the GNU Affero General Public\n * License along with this library.  If not, see <http://www.gnu.org/licenses/>.\n *\n */\n\nprint_r($_POST);\nif($_POST) {"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Request Forgery (CSRF)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3134_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles incoming carbons messages for a messaging application.",
+            "reasoning": "The source code does not sanitize or validate input data, making it vulnerable to XML External Entity (XXE) and XPath Injection attacks.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 36,
+                                        "snippet": " * MA 02110-1301, USA.\n *\n *\n */\n\nnamespace Moxl\\Xec\\Payload;\n\nclass Carbons extends Payload\n{\n    public function handle($stanza, $parent = false)"
+                                    }
+                                }
+                            ],
+                            "message": "XML External Entity (XXE) Injection"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 36,
+                                        "snippet": " * MA 02110-1301, USA.\n *\n *\n */\n\nnamespace Moxl\\Xec\\Payload;\n\nclass Carbons extends Payload\n{\n    public function handle($stanza, $parent = false)"
+                                    }
+                                }
+                            ],
+                            "message": "XPath Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_5159_0.phtml",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays a form for selecting and viewing binary logs.",
+            "reasoning": "No direct vulnerabilities found in the provided snippet.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1671_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Switches between text input and textarea for form fields dynamically.",
+            "reasoning": "The code directly inserts user input into the DOM, leading to Cross-Site Scripting (XSS) vulnerabilities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 7,
+                                        "endLine": 7,
+                                        "snippet": "  if (checkbox.checked) {"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via innerHTML"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 13,
+                                        "endLine": 13,
+                                        "snippet": "    target = '<textarea class=\"form-control editor_source hide\" id=\"' + id + '\" name=\"' + source.name + '\" placeholder=\"Value\" rows=\"1\">' + source.value + '</textarea>'"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via innerHTML"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3606_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays an error based on given parameters",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to echoing user input without sufficient sanitization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 50,
+                                        "endLine": 50,
+                                        "snippet": ""
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4542_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Parse HTTP messages according to RFC7230 specifications.",
+            "reasoning": "No exploitable vulnerabilities found. The code primarily defines regular expressions for parsing, without executing dynamic content.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_980_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Generate dynamic HTML content with conditional attributes and data.",
+            "reasoning": "No direct vulnerabilities found in the provided PHP snippet. The use of CHtml::encode and eT functions suggest output encoding to prevent XSS, making exploitation unlikely.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4104_0.go",
+            "runs": [
+            ],
+            "language": "Go",
+            "purpose": "Exposes dashboard routes for a web server.",
+            "reasoning": "The source code is vulnerable to an open redirect due to unsanitized user input in 'safePrefix' function.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 37,
+                                        "endLine": 48,
+                                        "snippet": "\tprefix := req.Header.Get(\"X-Forwarded-Prefix\")\n\tif prefix == \"\" {\n\t\treturn \"\"\n\t}\n\n\tparse, err := url.Parse(prefix)\n\tif err != nil {\n\t\treturn \"\"\n\t}\n"
+                                    }
+                                }
+                            ],
+                            "message": "Open Redirect Vulnerability"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4686_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Secure memory handling and comparison functions implementation.",
+            "reasoning": "The implementation of pure_strcmp is vulnerable to a buffer overflow due to not checking the length of s2, making it exploitable if s2 is shorter than s1.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 39,
+                                        "endLine": 41,
+                                        "snippet": "        d |= b1[i] ^ b2[i];\n    }\n    return (int) ((1 & ((d - 1) >> 8)) - 1);"
+                                    }
+                                }
+                            ],
+                            "message": "Buffer Overflow"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_555_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Deeply merges properties of source objects into a target object.",
+            "reasoning": "The recursive call in mixinDeep can lead to a stack overflow with a specially crafted object, causing a Denial of Service.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 9,
+                                        "endLine": 11,
+                                        "snippet": "    var obj = arguments[i];\n    if (isObject(obj)) {\n      forIn(obj, copy, target);"
+                                    }
+                                }
+                            ],
+                            "message": "Denial of Service via stack overflow"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_2501_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Checks if an IP or hostname resolves to a private network address.",
+            "reasoning": "No convincing vulnerabilities found. The code properly checks IP addresses against a predefined list without executing or evaluating external input.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3810_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Restores data based on UUID and redirects user.",
+            "reasoning": "The source code is vulnerable to Command Injection due to unsanitized input passed to shell_exec.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 5,
+                                        "endLine": 5,
+                                        "snippet": "    shell_exec(\"/usr/sbin/oo-restorer-wrapper.sh $uuid\");"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4923_0.phtml",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Manages HTML redirection to a specified URI.",
+            "reasoning": "The source code properly escapes the URI for HTML and JavaScript contexts, preventing XSS vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4512_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Git operations wrapper for checking repository state, checking out, and committing changes.",
+            "reasoning": "The source code is vulnerable to command injection due to unsanitized input passed to cp.exec.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 11,
+                                        "endLine": 11,
+                                        "snippet": "    return '\"' + str.replace(/([\"'$`\\\\])/g, \"\\\\$1\") + '\"';"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection via escapeQuotes"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 30,
+                                        "endLine": 30,
+                                        "snippet": "          line.trim() && !line.match(/^\\?\\? /) && !fUtils.isPackageFile(line)"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection in commit function"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4687_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Implements secure memory handling functions.",
+            "reasoning": "The implementation of pure_strcmp is vulnerable to a buffer overflow due to not checking the length of both strings.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 39,
+                                        "endLine": 41,
+                                        "snippet": "        d |= b1[i] ^ b2[i];\n    }\n    return (int) ((1 & ((d - 1) >> 8)) - 1);"
+                                    }
+                                }
+                            ],
+                            "message": "Buffer Overflow"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4682_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Deletes a repository based on user input.",
+            "reasoning": "The source code properly checks for user permissions and validates the form security, making it less likely to be exploitable.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4323_0.cpp",
+            "runs": [
+            ],
+            "language": "C++",
+            "purpose": "Reads lines from a QSslSocket and queues them for processing.",
+            "reasoning": "No convincing vulnerabilities found. The code properly checks for line length and uses Qt's signal-slot mechanism safely.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_378_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles live preview of stylesheets for layouts.",
+            "reasoning": "The source code is vulnerable to Directory Traversal and potentially to Local File Inclusion (LFI) due to improper input validation.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 22,
+                                        "snippet": "\nif ($_SERVER['REQUEST_METHOD'] == 'GET') {\n\tif (! empty ($_GET['layout'])) {\n\t\tif (strpos ($_GET['layout'], '..') === false) {\n\t\t\tif (file_exists ('layouts/' . $_GET['layout'] . '.html')) {\n\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_GET['layout'] . '.html');\n\t\t\t} elseif (file_exists ('layouts/' . $_GET['layout'] . '/' . $_GET['layout'] . '.html')) {\n\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_GET['layout'] . '/' . $_GET['layout'] . '.html');\n\t\t\t}"
+                                    }
+                                }
+                            ],
+                            "message": "Directory Traversal"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 22,
+                                        "snippet": "\nif ($_SERVER['REQUEST_METHOD'] == 'GET') {\n\tif (! empty ($_GET['layout'])) {\n\t\tif (strpos ($_GET['layout'], '..') === false) {\n\t\t\tif (file_exists ('layouts/' . $_GET['layout'] . '.html')) {\n\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_GET['layout'] . '.html');\n\t\t\t} elseif (file_exists ('layouts/' . $_GET['layout'] . '/' . $_GET['layout'] . '.html')) {\n\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_GET['layout'] . '/' . $_GET['layout'] . '.html');\n\t\t\t}"
+                                    }
+                                }
+                            ],
+                            "message": "Local File Inclusion"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3134_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles XMPP carbons, managing message forwarding and status updates.",
+            "reasoning": "The code is vulnerable to XML External Entity (XXE) Injection due to direct parsing of XML without disabling external entities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 6,
+                                        "endLine": 14,
+                                        "snippet": "{\n    public function handle($stanza, $parent = false)\n    {\n        $parentfrom = current(explode('/', (string)$parent->attributes()->from));\n\n        $message = $stanza->forwarded->message;\n\n        $from = current(explode('/',(string)$message->attributes()->from));\n        $to = current(explode('/',(string)$message->attributes()->to));"
+                                    }
+                                }
+                            ],
+                            "message": "XXE Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_559_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Deeply assigns default properties to an object.",
+            "reasoning": "No direct vulnerabilities found in the code itself. However, the use of dynamic requires could potentially lead to issues if not properly managed.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3889_0.java",
+            "runs": [
+            ],
+            "language": "Java",
+            "purpose": "Custom WebViewClient to handle URL loading.",
+            "reasoning": "The code is vulnerable to URL redirection attacks. It blindly trusts the URL's host without validating the scheme, potentially leading to malicious website visits.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 12,
+                                        "endLine": 18,
+                                        "snippet": "    public boolean shouldOverrideUrlLoading(WebView view, String url) {\n        Uri uri = Uri.parse(url);\n        if (uri.getHost() != null && uri.getHost().endsWith(\"example.com\")) {\n            return false;\n        }\n\n        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));"
+                                    }
+                                }
+                            ],
+                            "message": "URL Redirection to Untrusted Site"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3288_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Skips ID3 tags in audio files",
+            "reasoning": "The calculation of 'offset' may lead to integer overflow, allowing arbitrary file seek.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 25,
+                                        "endLine": 28,
+                                        "snippet": "\n#include\t\"sndfile.h\"\n#include\t\"sfendian.h\"\n#include\t\"common.h\""
+                                    }
+                                }
+                            ],
+                            "message": "Integer Overflow"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3606_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays an error based on given parameters",
+            "reasoning": "Direct output of querystring without sanitization may lead to XSS.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 46,
+                                        "endLine": 46,
+                                        "snippet": "\t\t\tcase 'not-found':"
+                                    }
+                                }
+                            ],
+                            "message": "Reflected Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4928_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Initializes an autoloader for sql-parser components.",
+            "reasoning": "No direct vulnerabilities found in autoloader initialization code.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3747_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Renders a settings page for OpenID user identity.",
+            "reasoning": "The code snippet does not directly show any vulnerabilities without knowing more about the OCP classes and methods.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3798_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Configures WebDAV URL in ownCloud settings via POST request.",
+            "reasoning": "The code uses strip_tags on user input, which is insufficient to prevent Cross-Site Scripting (XSS) if echoed back to the user without proper encoding. However, without seeing the implementation of OC_Config::setValue and OC_Template, it's speculative. Assuming OC_Template properly escapes output, the main concern would be if OC_Config::setValue or other parts of the system use the 'user_webdavauth_url' in a context where XSS could be exploited.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 14,
+                                        "snippet": " * This library is distributed in the hope that it will be useful,"
+                                    }
+                                }
+                            ],
+                            "message": "Potential XSS via webdav_url parameter"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_2003_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Proxy server plugin for handling authentication.",
+            "reasoning": "No convincing vulnerabilities found. Code primarily handles authentication with basic checks.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_784_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Merges configuration objects with specific rules for signals, legends, and styles.",
+            "reasoning": "No direct vulnerabilities found in the provided source code. The code properly checks for illegal keys and handles object merging securely.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1464_0.phtml",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "A login form display for a web application.",
+            "reasoning": "No direct vulnerabilities found in the provided PHP code snippet. The code primarily deals with form rendering, not with processing or storing data.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4068_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Executes SNMP commands to translate MIB files to OIDs.",
+            "reasoning": "The source code directly passes user input to a shell command without sanitization, leading to Command Injection.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 22,
+                                        "snippet": " */"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3699_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Encryption module using pycryptopp or pycrypto for AES encryption and decryption.",
+            "reasoning": "The code is vulnerable to padding oracle attacks due to predictable padding in the fallback AES implementation. Additionally, using the same function for encryption and decryption in pycryptopp's case lacks proper decryption padding handling, potentially leading to errors or security issues.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 20,
+                                        "snippet": "\n    def aesEncrypt(data, key):\n        cipher = AES.new(key)"
+                                    }
+                                }
+                            ],
+                            "message": "Predictable padding in AES encryption"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 8,
+                                        "endLine": 10,
+                                        "snippet": "\n    def aesEncrypt(data, key):\n        cipher = aes.AES(key)"
+                                    }
+                                }
+                            ],
+                            "message": "Improper use of encryption function for decryption"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3738_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles app configuration actions for an admin user.",
+            "reasoning": "The source code directly uses user input in database queries, leading to SQL Injection. No input validation or sanitization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 13,
+                                        "endLine": 27,
+                                        "snippet": "switch($action){\n\tcase 'getValue':\n\t\t$result=OC_Appconfig::getValue($_GET['app'],$_GET['key'],$_GET['defaultValue']);\n\t\tbreak;\n\tcase 'setValue':\n\t\t$result=OC_Appconfig::setValue($_POST['app'],$_POST['key'],$_POST['value']);\n\t\tbreak;\n\tcase 'getApps':\n\t\t$result=OC_Appconfig::getApps();\n\t\tbreak;"
+                                    }
+                                }
+                            ],
+                            "message": "SQL Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_5706_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Display popup news items for a virtual airline system.",
+            "reasoning": "The source code properly sanitizes the 'id' and 'howmany' variables by converting them to integers, which mitigates SQL Injection risks. No convincing vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4930_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Lint SQL queries using an AJAX request.",
+            "reasoning": "The source code directly includes user input in an AJAX request, potentially leading to XSS if not properly sanitized server-side.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 26,
+                                        "snippet": "                severity : response[idx].severity\n            });\n        }\n\n        updateLinting(cm, found);"
+                                    }
+                                }
+                            ],
+                            "message": "Potential XSS through user input"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4029_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Unable to determine without more context.",
+            "reasoning": "No vulnerabilities found due to lack of context and code.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3806_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "A Rails controller handling CSRF protection",
+            "reasoning": "No vulnerabilities found due to proper use of protect_from_forgery.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3236_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles file selection and permissions in a file manager.",
+            "reasoning": "The source code directly uses $_REQUEST data without proper sanitization, leading to potential Cross-Site Scripting (XSS) vulnerabilities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 23,
+                                        "endLine": 23,
+                                        "snippet": "}"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via $_REQUEST['fID']"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 23,
+                                        "endLine": 23,
+                                        "snippet": "}"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via $selectedField"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1514_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Manages ACL rules in a DokuWiki plugin.",
+            "reasoning": "No direct vulnerabilities found without context of plugin_load function implementation.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4130_0.h",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Defines L2TP protocol structures and constants.",
+            "reasoning": "No direct vulnerabilities in protocol definitions. Potential issues depend on implementation specifics.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3605_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays an error message based on given parameters.",
+            "reasoning": "The source code properly escapes output with htmlspecialchars, mitigating XSS. No convincing vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2025_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Generates hashed passwords for LDAP attributes.",
+            "reasoning": "The use of MD5 and SHA1 for password hashing is considered insecure due to vulnerabilities to collision attacks.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 22,
+                                        "snippet": "    # STUB: This is here to fulfill the requirements of an RFC, which\n    # one?\n    #\n    # TODO:\n    # * maybe salted-md5\n    # * Should we provide sha1 as a synonym for sha1? I vote no because then\n    #   should you also provide ssha1 for symmetry?\n    #\n    attribute_value = \"\""
+                                    }
+                                }
+                            ],
+                            "message": "Insecure Hashing Algorithms (MD5, SHA1)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_5159_0.phtml",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays a form for selecting and viewing binary logs.",
+            "reasoning": "The code directly uses $_REQUEST['log'] which may lead to Cross-Site Scripting (XSS) if not properly sanitized.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 8,
+                                        "endLine": 8,
+                                        "snippet": "        <select name=\"log\">"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_88_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Display error messages and provide a link back to the repository.",
+            "reasoning": "The source code directly uses session data for error messages without sanitization, potentially leading to Cross-Site Scripting (XSS) vulnerabilities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 22,
+                                        "snippet": "\t//$tpl->parseCurrentBlock();"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via unsanitized session data"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4357_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Automatically linkifies elements on a webpage based on their content.",
+            "reasoning": "The source code dynamically loads external scripts, which could lead to security risks if the CDN is compromised.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 2,
+                                        "endLine": 3,
+                                        "snippet": "  await addon.tab.loadScript(\"https://cdn.jsdelivr.net/npm/linkifyjs@2.1.9/dist/linkify.min.js\");\n  await addon.tab.loadScript(\"https://cdn.jsdelivr.net/npm/linkifyjs@2.1.9/dist/linkify-element.min.js\");"
+                                    }
+                                }
+                            ],
+                            "message": "External Script Loading Vulnerability"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3607_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Generates MySQL server configuration for replication setup.",
+            "reasoning": "The code is vulnerable to Cross-Site Scripting (XSS) due to direct DOM manipulation with user-controlled input.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 10,
+                                        "endLine": 23,
+                                        "snippet": "function update_config() {\n    var conf_ignore = \"binlog_ignore_db=\";\n    var conf_do = \"binlog_do_db=\";\n    var database_list = $('#db_select option:selected:first').val();\n    $('#db_select option:selected:not(:first)').each(function() {\n        database_list += ',' + $(this).val();\n    });\n\n    if ($('#db_select option:selected').size() == 0) {\n        $('#rep').html(conf_prefix);"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_2113_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Generates a subset of a font based on user input.",
+            "reasoning": "The script is vulnerable to Directory Traversal via the 'fontfile' GET parameter. Despite using basename(), the subsequent concatenation with '../fonts/' allows for potential traversal. Additionally, user-controlled input in 'name' is echoed back without sanitization, leading to Cross-Site Scripting (XSS).",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 10,
+                                        "endLine": 11,
+                                        "snippet": "use FontLib\\Binary_Stream;\n"
+                                    }
+                                }
+                            ],
+                            "message": "Directory Traversal"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 35,
+                                        "endLine": 35,
+                                        "snippet": "  $font->reduce();"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_5012_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Implements a restricted execution environment by limiting method access.",
+            "reasoning": "The source code does not directly indicate exploitable vulnerabilities. It focuses on restricting method access, which is a defensive measure.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1400_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Implements login and logout functionality for a web application.",
+            "reasoning": "The redirect based on params[:ref] could lead to open redirect vulnerabilities if not properly validated.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 22,
+                                        "snippet": "  def default_logged_in_path\n    SS.config.sns.logged_in_page\n  end\n\n  def login_success"
+                                    }
+                                }
+                            ],
+                            "message": "Open Redirect"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3738_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Manages application configurations for an admin user.",
+            "reasoning": "Direct use of $_GET and $_POST without validation or sanitization can lead to Cross-Site Scripting (XSS) and possibly SQL Injection if not properly handled by OC_Appconfig methods. However, exploitability depends on the implementation of OC_Appconfig methods, which is not provided.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 26,
+                                        "snippet": "switch($action){\n\tcase 'getValue':\n\t\t$result=OC_Appconfig::getValue($_GET['app'],$_GET['key'],$_GET['defaultValue']);\n\t\tbreak;\n\tcase 'setValue':\n\t\t$result=OC_Appconfig::setValue($_POST['app'],$_POST['key'],$_POST['value']);\n\t\tbreak;\n\tcase 'getApps':\n\t\t$result=OC_Appconfig::getApps();\n\t\tbreak;"
+                                    }
+                                }
+                            ],
+                            "message": "Potential XSS and SQL Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_5706_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Display popup news items for a virtual airline system.",
+            "reasoning": "The source code does not directly show vulnerabilities like SQL Injection or XSS due to lack of context on how data is handled in PopUpNewsData methods. However, reliance on is_numeric() for input validation is weak and could be bypassed.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3990_0.go",
+            "runs": [
+            ],
+            "language": "Go",
+            "purpose": "Sanitizes URLs to prevent open-redirect vulnerabilities.",
+            "reasoning": "The function attempts to mitigate open-redirect vulnerabilities by ensuring the path starts with '/'. However, it does not account for URLs that use schemes other than http/https, such as 'javascript:', which can still lead to vulnerabilities if the URL is used in a context where those schemes are executable. This makes it potentially exploitable.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 10,
+                                        "endLine": 14,
+                                        "snippet": "// 🚨 SECURITY: Handlers MUST call this on any redirection destination URL derived from untrusted\n// user input, or else there is a possible open-redirect vulnerability.\nfunc SafeRedirectURL(urlStr string) string {\n\tu, err := url.Parse(urlStr)\n\tif err != nil || !strings.HasPrefix(u.Path, \"/\") {"
+                                    }
+                                }
+                            ],
+                            "message": "Open-Redirect via Scheme Abuse"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4923_0.phtml",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Redirects to a specified URI with immediate and delayed mechanisms.",
+            "reasoning": "Potential Cross-Site Scripting (XSS) vulnerability due to improper sanitization of the $uri variable.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 17,
+                                        "endLine": 17,
+                                        "snippet": "    <meta http-equiv=\"Cache-Control\" content=\"no-cache\">"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via JavaScript redirection"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 23,
+                                        "endLine": 23,
+                                        "snippet": "    </script>"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via document.write"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4068_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Extracts MIB OIDs from a file using SNMP commands.",
+            "reasoning": "The use of shell_exec with dynamic input can lead to command injection if not properly sanitized.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 22,
+                                        "snippet": " */"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4442_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Recursively sets a value in a nested object or array based on a path.",
+            "reasoning": "The code does not directly interact with external inputs or perform operations known to be vulnerable. It primarily manipulates object properties.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2892_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Configures URLs and names for downloading Python and Visual C++ Build Tools.",
+            "reasoning": "Hardcoded URLs could lead to dependency confusion or injection attacks if not properly validated or if the source becomes malicious.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 3,
+                                        "endLine": 3,
+                                        "snippet": "var buildTools = {"
+                                    }
+                                },
+                                {
+                                    "region": {
+                                        "startLine": 9,
+                                        "endLine": 9,
+                                        "snippet": "var python = {"
+                                    }
+                                }
+                            ],
+                            "message": "Hardcoded URLs may lead to dependency confusion/injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1921_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Adds sticky control functionality to a forum's discussion list.",
+            "reasoning": "No direct vulnerabilities found in the provided source code snippet. The code primarily extends functionality without obvious security implications.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1007_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1540_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Custom image cropping for Paperclip library",
+            "reasoning": "The code dynamically constructs command-line arguments, potentially leading to command injection if user input is not properly sanitized.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 20,
+                                        "snippet": "\n    def crop_command\n      target = @attachment.instance\n\n      if target.cropping?(@attachment.name)\n        w = target.send :\"#{@attachment.name}_crop_w\"\n        h = target.send :\"#{@attachment.name}_crop_h\""
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_5859_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Send desktop notifications on Linux using libnotify.",
+            "reasoning": "The source code is vulnerable to command injection due to unsanitized input in exec calls.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 51,
+                                        "endLine": 51,
+                                        "snippet": " * @param {object} options"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1637_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Base controller for a Ruby on Rails application, handling user sessions and themes.",
+            "reasoning": "No explicit vulnerabilities found in the provided source code snippet. The code primarily deals with session management and helper methods.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4330_0.go",
+            "runs": [
+            ],
+            "language": "Go",
+            "purpose": "Terminates a process group by sending SIGTERM.",
+            "reasoning": "No convincing vulnerabilities found. The function properly handles errors and uses system calls correctly.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_472_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays a notice message, either predefined or user-specified.",
+            "reasoning": "The source code directly prints user input without sanitization, leading to a Cross-Site Scripting (XSS) vulnerability.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 37,
+                                        "endLine": 37,
+                                        "snippet": "if (! GETPOST('transkey','alphanohtml') && ! GETPOST('transphrase','alphanohtml'))"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via 'transphrase' parameter"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 38,
+                                        "endLine": 38,
+                                        "snippet": "{"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via 'transkey' parameter, if malicious translation exists."
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_2113_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Generates a subset of a font based on user input",
+            "reasoning": "The source code is vulnerable to a Directory Traversal attack due to improper sanitization of the 'fontfile' GET parameter. This allows an attacker to access files outside the intended directory. Additionally, the use of 'basename' does not fully mitigate the risk as directory traversal sequences can be included in the file name after sanitization. The vulnerability is exploitable if an attacker crafts a request with a specially designed 'fontfile' parameter.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 9,
+                                        "endLine": 11,
+                                        "snippet": "use FontLib\\Font;\nuse FontLib\\Binary_Stream;\n"
+                                    }
+                                }
+                            ],
+                            "message": "Directory Traversal"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4618_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Git operations wrapper for Node.js applications",
+            "reasoning": "The source code is vulnerable to command injection via the 'files' and 'message' parameters in the commit function. These parameters are inserted into a command string without adequate sanitization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 36,
+                                        "endLine": 36,
+                                        "snippet": ""
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection via 'files' parameter"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 36,
+                                        "endLine": 36,
+                                        "snippet": ""
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection via 'message' parameter"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4029_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Dumps all user records from the database",
+            "reasoning": "The code uses Laravel's dd() helper function to dump and die, which is not inherently vulnerable but can expose sensitive information if used in a production environment.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 3,
+                                        "endLine": 3,
+                                        "snippet": "dd(User::all());"
+                                    }
+                                }
+                            ],
+                            "message": "Potential sensitive information exposure"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4445_0.java",
+            "runs": [
+            ],
+            "language": "Java",
+            "purpose": "Implements file output stream functionalities.",
+            "reasoning": "No explicit vulnerabilities found in the provided Java code snippet. The native methods' implementations are not visible, hence cannot assess their safety.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3236_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Display file details and permissions in a web interface",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to improper sanitization of user input.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 23,
+                                        "endLine": 23,
+                                        "snippet": "\tdie(t(\"Access Denied.\"));"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1514_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Manages ACL rules in a DokuWiki plugin",
+            "reasoning": "No direct vulnerabilities found in the provided source code. The security relies on the auth_isadmin() function.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4622_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Parses Linux cmdline string into key/value pairs object.",
+            "reasoning": "The source code does not properly sanitize input, allowing for potential prototype pollution if a user controls keys.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 5,
+                                        "endLine": 25,
+                                        "snippet": "  // Get key node\n  const keypath = arg.shift().split('.')\n\n  let key = keypath.shift()\n  let node = result\n\n  while(keypath.length)\n  {\n    node[key] = node[key] || {}\n    node = node[key]"
+                                    }
+                                }
+                            ],
+                            "message": "Prototype Pollution"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3605_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays an error message based on given parameters.",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to echoing user input without sufficient sanitization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 50,
+                                        "endLine": 50,
+                                        "snippet": ""
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1006_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_784_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Merges configuration objects with specific rules for signals, legends, and styles.",
+            "reasoning": "No direct vulnerabilities found in the code snippet. The functions primarily deal with object and array manipulation without executing or evaluating external input.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_378_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles live preview of stylesheets and layouts for an admin panel.",
+            "reasoning": "The source code is vulnerable to Local File Inclusion (LFI) and Cross-Site Scripting (XSS) due to improper input validation.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 22,
+                                        "snippet": "\nif ($_SERVER['REQUEST_METHOD'] == 'GET') {\n\tif (! empty ($_GET['layout'])) {\n\t\tif (strpos ($_GET['layout'], '..') === false) {\n\t\t\tif (file_exists ('layouts/' . $_GET['layout'] . '.html')) {\n\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_GET['layout'] . '.html');\n\t\t\t} elseif (file_exists ('layouts/' . $_GET['layout'] . '/' . $_GET['layout'] . '.html')) {\n\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_GET['layout'] . '/' . $_GET['layout'] . '.html');\n\t\t\t}"
+                                    }
+                                }
+                            ],
+                            "message": "Local File Inclusion (LFI)"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 31,
+                                        "endLine": 39,
+                                        "snippet": "\t\t\tif (file_exists ('layouts/' . $_POST['layout'] . '.html')) {\n\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_POST['layout'] . '.html');\n\t\t\t} elseif (file_exists ('layouts/' . $_POST['layout'] . '/' . $_POST['layout'] . '.html')) {\n\t\t\t\t$page->layout = file_get_contents ('layouts/' . $_POST['layout'] . '/' . $_POST['layout'] . '.html');\n\t\t\t}\n\t\t}\n\t}\n\tif ($_POST['css']) {\n\t\t$page->layout = str_replace ('</head>', '<style>' . $_POST['css'] . '</style></head>', $page->layout);"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_499_0.java",
+            "runs": [
+            ],
+            "language": "Java",
+            "purpose": "File download handling with optional deletion after download.",
+            "reasoning": "The code is vulnerable to a Path Traversal attack due to unsanitized user input in file paths. This allows an attacker to access arbitrary files.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 18,
+                                        "snippet": "    private Logger log = LoggerFactory.getLogger(this.getClass());"
+                                    }
+                                }
+                            ],
+                            "message": "Path Traversal"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_5536_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Password reset form handling",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to improper sanitization of URL parameters.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 1,
+                                        "snippet": "<form action=\"<?php echo 'resetpassword.php?user='.htmlentities($_GET['user']).'&token='.htmlentities($_GET['token']); ?>\" method=\"post\">"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3889_0.java",
+            "runs": [
+            ],
+            "language": "Java",
+            "purpose": "Custom WebViewClient to handle URL loading.",
+            "reasoning": "The code is vulnerable to URL Redirection to untrusted sites by not validating the URL scheme.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 12,
+                                        "endLine": 18,
+                                        "snippet": "    public boolean shouldOverrideUrlLoading(WebView view, String url) {\n        Uri uri = Uri.parse(url);\n        if (uri.getHost() != null && uri.getHost().endsWith(\".example.com\")) {\n            return false;\n        }\n\n        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));"
+                                    }
+                                }
+                            ],
+                            "message": "URL Redirection to untrusted site"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_3775_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles app configuration actions like get/set values, keys, and apps.",
+            "reasoning": "The source code directly uses user input in database queries without sanitization, leading to SQL Injection vulnerabilities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 11,
+                                        "endLine": 25,
+                                        "snippet": "$result=false;\nswitch($action){\n\tcase 'getValue':\n\t\t$result=OC_Appconfig::getValue($_GET['app'],$_GET['key'],$_GET['defaultValue']);\n\t\tbreak;\n\tcase 'setValue':\n\t\t$result=OC_Appconfig::setValue($_POST['app'],$_POST['key'],$_POST['value']);\n\t\tbreak;\n\tcase 'getApps':\n\t\t$result=OC_Appconfig::getApps();"
+                                    }
+                                }
+                            ],
+                            "message": "SQL Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1132_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Executes commands based on user input and redirects or displays the response.",
+            "reasoning": "The source code directly uses user input in the 'cmd' variable without sanitization, leading to Remote Code Execution (RCE).",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 25,
+                                        "endLine": 25,
+                                        "snippet": "*/"
+                                    }
+                                }
+                            ],
+                            "message": "Remote Code Execution via 'cmd' parameter"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_8_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Dynamically loads message types and constructs message objects.",
+            "reasoning": "The use of eval() with unvalidated input can lead to arbitrary code execution. The dynamic import mechanism could also be abused.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 12,
+                                        "endLine": 12,
+                                        "snippet": ""
+                                    }
+                                }
+                            ],
+                            "message": "Arbitrary Code Execution via eval()"
+                        }
+                    ]
+                },
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 25,
+                                        "endLine": 33,
+                                        "snippet": "    except:\n        logger.error(\"classBase fail\", exc_info=True)\n        return None\n    else:\n        return returnObj\n\nif paths.frozen is not None:\n    import messagetypes.message\n    import messagetypes.vote"
+                                    }
+                                }
+                            ],
+                            "message": "Unsafe Dynamic Module Import"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4104_0.go",
+            "runs": [
+            ],
+            "language": "Go",
+            "purpose": "Exposes dashboard routes for a web application.",
+            "reasoning": "The source code redirects based on the 'X-Forwarded-Prefix' header without validation, which could lead to open redirect vulnerabilities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 22,
+                                        "snippet": ""
+                                    }
+                                }
+                            ],
+                            "message": "Open Redirect"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4267_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles HTTP URLs conversion into HTTPS for video content.",
+            "reasoning": "The source code is vulnerable to an Open Redirect due to unsanitized user input in the 'livelink' GET parameter.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 14,
+                                        "snippet": " */"
+                                    }
+                                }
+                            ],
+                            "message": "Open Redirect"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3883_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Detects the application's environment based on various conditions.",
+            "reasoning": "The source code does not directly expose any vulnerabilities. However, reliance on environment variables and file existence checks could potentially be exploited if an attacker gains access to the server configuration or file system.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_2501_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Checks if an IP or hostname resolves to a private network address.",
+            "reasoning": "No direct vulnerabilities found in the source code. The functionality relies on standard libraries without evident misuse.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4568_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Defines a form for custom URLs in a PrestaShop module.",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4130_0.h",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_88_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays error messages and provides a link back to the repository.",
+            "reasoning": "The code directly outputs session failure message without sanitization, leading to potential Cross-Site Scripting (XSS) vulnerabilities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 22,
+                                        "snippet": "\t//$tpl->parseCurrentBlock();"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1418_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles image file uploads to a server.",
+            "reasoning": "The code is vulnerable to an Unrestricted File Upload due to lack of proper file validation.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 30,
+                                        "snippet": "<?php\n    if(isset($_FILES[\"fileUpload\"][\"name\"])){\n        $imageFile = ($_FILES[\"fileUpload\"][\"name\"]);\n        $imageType = ($_FILES[\"fileUpload\"][\"type\"]);\n        $validext = array(\"jpeg\",\"jpg\",\"png\");\n        $fileExt = pathinfo($imageFile, PATHINFO_EXTENSION);\n        $ready = false;\n        if((($imageType == \"image/jpeg\") || ($imageType == \"image/jpg\") || ($imageType == \"image/png\"))&&in_array($fileExt, $validext)){\n            $ready = true;\n        }else{"
+                                    }
+                                }
+                            ],
+                            "message": "Unrestricted File Upload"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4512_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Manages Git operations like checking repository status, checking out, and committing changes.",
+            "reasoning": "The source code is vulnerable to command injection due to improper input sanitization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 30,
+                                        "endLine": 30,
+                                        "snippet": "    return callback();"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4846_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Checks integrity of links in form fields and displays errors.",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to direct output of $_GET parameters without proper sanitization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 50,
+                                        "snippet": "<?\t\n\t$integrity_errors = array();\n\t$external = $_GET[\"external\"] ? true : false;\n\n\t// Get the form so we can walk through its fields\n\t$form = BigTreeAutoModule::getForm($_GET[\"form\"]);\t\n\n\t// Create a generic module class to get the decoded item data\n\t$m = new BigTreeModule;\n\t$m->Table = $form[\"table\"];"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_2885_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Defines constants for the phpwcms content management system versioning.",
+            "reasoning": "No executable code or user input handling, thus no vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1750_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Generates a color histogram from an image.",
+            "reasoning": "The use of `shellescape` mitigates shell injection, but not completely foolproof against complex shell escape sequences.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 6,
+                                        "endLine": 6,
+                                        "snippet": "      output = `convert #{image_path.shellescape} -resize 400x400 -format %c -dither None -quantize YIQ -colors #{colors.to_i} -depth #{depth.to_i} histogram:info:-`"
+                                    }
+                                }
+                            ],
+                            "message": "Potential Shell Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1974_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Sets or gets an object field value, with restrictions on magical attributes.",
+            "reasoning": "The code attempts to restrict setting '__proto__', 'constructor', and 'prototype' to prevent prototype pollution. However, it's still vulnerable due to case sensitivity and alternative encodings.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 14,
+                                        "snippet": " */"
+                                    }
+                                }
+                            ],
+                            "message": "Prototype Pollution"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_8_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Dynamically load and handle different message types.",
+            "reasoning": "The code dynamically imports modules based on external input without validation, leading to potential arbitrary code execution.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 12,
+                                        "endLine": 14,
+                                        "snippet": "\ndef constructObject(data):\n    try:"
+                                    }
+                                }
+                            ],
+                            "message": "Arbitrary Code Execution via Dynamic Import"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4339_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Sanitizes sensitive information from environment variables in output.",
+            "reasoning": "No direct vulnerabilities found. The code properly checks and sanitizes output based on environment variable names.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3775_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles configuration settings for apps in a web application.",
+            "reasoning": "The source code directly uses user input in database queries without sanitization, leading to SQL Injection vulnerabilities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 26,
+                                        "snippet": "\tcase 'getValue':\n\t\t$result=OC_Appconfig::getValue($_GET['app'],$_GET['key'],$_GET['defaultValue']);\n\t\tbreak;\n\tcase 'setValue':\n\t\t$result=OC_Appconfig::setValue($_POST['app'],$_POST['key'],$_POST['value']);\n\t\tbreak;\n\tcase 'getApps':\n\t\t$result=OC_Appconfig::getApps();\n\t\tbreak;\n\tcase 'getKeys':"
+                                    }
+                                }
+                            ],
+                            "message": "SQL Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_884_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles password change requests for users.",
+            "reasoning": "The source code is vulnerable to Cross-Site Request Forgery (CSRF) as it lacks any form of CSRF token validation.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 13,
+                                        "endLine": 21,
+                                        "snippet": "// ============================================================================\n\nif ($_SERVER['REQUEST_METHOD'] == 'POST') {\n\tif (changeUserPassword(array(\n\t\t'username'=>$_POST['username'],\n\t\t'newPassword'=>$_POST['newPassword'],\n\t\t'confirmPassword'=>$_POST['confirmPassword']\n\t))) {\n\t\tif ($login->role()==='admin') {"
+                                    }
+                                }
+                            ],
+                            "message": "CSRF Vulnerability"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1132_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Executes commands based on user input and redirects or displays the response.",
+            "reasoning": "The source code directly uses user input in the 'cmd' variable without sanitization, leading to Remote Code Execution (RCE).",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 25,
+                                        "endLine": 25,
+                                        "snippet": "*/"
+                                    }
+                                }
+                            ],
+                            "message": "Remote Code Execution via 'cmd' parameter"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1671_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Toggle visibility and type of input fields in a web form.",
+            "reasoning": "The source code directly manipulates DOM elements based on user input without sanitizing, potentially leading to XSS vulnerabilities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 34,
+                                        "snippet": "function turn_textarea_switch(checkbox) {\n  var target, session;\n  var id = checkbox.id.replace(/hidden_value$/, \"value\");\n  var source = document.getElementById(id);\n  var $editorContainer = $('.editor-container');\n\n  if (checkbox.checked) {\n    target = $('<input/>').attr({ type: 'password', id: id, name: source.name, value: $(source).val(), class: 'form-control'});\n    $editorContainer.find('.navbar').hide();\n    $editorContainer.find('.ace_editor').remove();"
+                                    }
+                                }
+                            ],
+                            "message": "Potential XSS through unsanitized user input"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_499_0.java",
+            "runs": [
+            ],
+            "language": "Java",
+            "purpose": "Handles file downloads with optional deletion after download.",
+            "reasoning": "The code is vulnerable to a Path Traversal attack due to unsanitized fileName input.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 18,
+                                        "snippet": "    private Logger log = LoggerFactory.getLogger(this.getClass());"
+                                    }
+                                }
+                            ],
+                            "message": "Path Traversal"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4542_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Parse HTTP messages according to RFC7230 definitions.",
+            "reasoning": "No exploitable vulnerabilities found. Regular expressions are safely defined without user input.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5536_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles password reset form display and submission.",
+            "reasoning": "The code is vulnerable to XSS via the QUERY_STRING in the form action attribute.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 1,
+                                        "snippet": "<form action=\"<?php echo 'resetpassword.php?'.$_SERVER['QUERY_STRING']; ?>\" method=\"post\">"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via QUERY_STRING"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_980_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Dynamically generates HTML panels with content and links.",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to improper data sanitization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 24,
+                                        "snippet": "<div class=\"<?php echo $sizeClass; ?> ls-flex-column ls-panelboxes-panelbox text-primary\" >\n    <div class=\"panel panel-primary panel-clickable ls-panelboxes-panelbox-inner selector__<?=str_replace(' ', '_', strtolower($title))?>\"\n        id=\"panel-<?php echo $position; ?>\"\n        data-url=\"<?php echo $url; ?>\"\n        <?php if ($external): ?>\n            data-target=\"_blank\"\n        <?php endif; ?>\n    >\n        <div class=\"panel-heading\">\n            <div class=\"panel-title h4\"><?php eT($title); ?></div>"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1007_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4846_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Checks integrity of links and images in form fields, reports errors.",
+            "reasoning": "The code is vulnerable to Cross-Site Scripting (XSS) due to direct output of unescaped data in HTML context.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 43,
+                                        "endLine": 43,
+                                        "snippet": "\t}"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via error output"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 44,
+                                        "endLine": 44,
+                                        "snippet": "\t"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via form field title output"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1418_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Handles image file uploads to a server.",
+            "reasoning": "The source code is vulnerable to an Arbitrary File Upload due to insufficient file extension and MIME type validation.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 8,
+                                        "endLine": 23,
+                                        "snippet": "        if((($imageType == \"image/jpeg\") || ($imageType == \"image/jpg\") || ($imageType == \"image/png\"))&&in_array($fileExt, $validext)){\n            $ready = true;\n        }else{\n            echo \"was not an image<br>\";\n            exit();\n        }\n\n        if($_FILES[\"fileUpload\"][\"size\"] < 1000000){\n            $ready = true;\n            echo \"file size is \".$_FILES['fileUpload'][\"size\"].\"<br>\";"
+                                    }
+                                }
+                            ],
+                            "message": "Arbitrary File Upload"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4636_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Validates username, password, and email inputs.",
+            "reasoning": "The code lacks proper validation for passwords, making it potentially exploitable.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 47,
+                                        "endLine": 49,
+                                        "snippet": "function email (em) {\n  if (!em.match(/^.+@.+\\..+$/)) {\n    return new Error(requirements.email.valid)"
+                                    }
+                                }
+                            ],
+                            "message": "Password validation missing"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_2885_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Defines constants for the phpwcms content management system versioning.",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_2495_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Text manipulation and calculation of Levenshtein distance between strings.",
+            "reasoning": "No exploitable vulnerabilities found. The code performs text manipulation without executing or evaluating external input.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4267_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Converts HTTP URLs to HTTPS for video playlist links.",
+            "reasoning": "The source code is vulnerable to an Open Redirect due to unsanitized user input in the 'livelink' GET parameter.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 14,
+                                        "snippet": " */"
+                                    }
+                                }
+                            ],
+                            "message": "Open Redirect"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4568_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Defines a form type for custom URLs in a PrestaShop module.",
+            "reasoning": "No vulnerabilities found in the provided source code snippet. It's a straightforward form definition without any data processing or external input handling.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3883_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Detects the application's environment based on various conditions.",
+            "reasoning": "The use of 'env' function without proper validation may lead to environment variable injection if externally controlled data is used. However, without explicit external data control, it's not directly exploitable.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5076_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Executes a fix command based on SELinux alerts.",
+            "reasoning": "The source code is vulnerable to Command Injection due to unsanitized input directly used in a command execution.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 15,
+                                        "endLine": 16,
+                                        "snippet": "    @dbus.service.method (\"org.fedoraproject.SetroubleshootFixit\", in_signature='ss', out_signature='s')\n    def run_fix(self, local_id, analysis_id):"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1006_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_1540_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Image cropping functionality for Paperclip library",
+            "reasoning": "The code dynamically constructs command-line arguments for image processing, which could lead to command injection if user input is not properly sanitized. However, without seeing how user input is handled before it reaches this point, it's speculative to conclude its exploitability.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3870_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Decoder for PCX image data.",
+            "reasoning": "The code is vulnerable to buffer overflows due to lack of bounds checking on 'state->buffer' and 'ptr' manipulations.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 36,
+                                        "endLine": 38,
+                                        "snippet": "\n\tif (bytes < 1)\n\t    return ptr - buf;"
+                                    }
+                                }
+                            ],
+                            "message": "Buffer Overflow"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 50,
+                                        "endLine": 52,
+                                        "snippet": "\t\t    state->errcode = IMAGING_CODEC_OVERRUN;\n\t\t    break;\n\t\t}"
+                                    }
+                                }
+                            ],
+                            "message": "Buffer Overflow"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1485_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Generates performance graphs for monitoring data",
+            "reasoning": "The source code is vulnerable to Command Injection due to improper sanitization of user-supplied input.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 263,
+                                        "endLine": 263,
+                                        "snippet": "    $rrd_time2 = str_replace(\":\", \"\\:\", $rrd_time2);"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_5859_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Send desktop notifications on Linux using libnotify.",
+            "reasoning": "The source code is vulnerable to command injection via the msg parameter in the notify function. External input is passed directly to execFile without proper sanitization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 47,
+                                        "endLine": 60,
+                                        "snippet": " *     // ... notification sent\n *   })\n *\n * @param {string} msg\n * @param {object} options\n * @param {function} callback\n * @api public\n */\n\nexports.notify = function(msg, options, callback) {"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1637_0.rb",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4330_0.go",
+            "runs": [
+            ],
+            "language": "Go",
+            "purpose": "Terminates a process and sends SIGTERM signal",
+            "reasoning": "Potential vulnerability due to unchecked array access, leading to a panic if no argument is passed.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 12,
+                                        "endLine": 12,
+                                        "snippet": "\tif _, err := os.Stat(\"/.dockerenv\"); err == nil {"
+                                    }
+                                }
+                            ],
+                            "message": "Unchecked array access leading to panic"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_5756_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Manages a proc file for setting and reading a UML exit code.",
+            "reasoning": "The code properly checks user input size and validates it, preventing buffer overflow and injection vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4445_0.java",
+            "runs": [
+            ],
+            "language": "Java",
+            "purpose": "Implements file output stream functionalities.",
+            "reasoning": "No explicit vulnerabilities found in the provided source code. The native methods' implementations are not visible, hence cannot assess their safety.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_5818_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Implements PNG image processing functions for FFmpeg.",
+            "reasoning": "The code directly accesses memory using pointers, which could lead to buffer overflow if 'w' is not properly validated.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 29,
+                                        "snippet": "#include \"libavutil/attributes.h\"\n#include \"libavutil/common.h\"\n#include \"png.h\"\n#include \"pngdsp.h\"\n\n// 0x7f7f7f7f or 0x7f7f7f7f7f7f7f7f or whatever, depending on the cpu's native arithmetic size\n#define pb_7f (~0UL/255 * 0x7f)\n#define pb_80 (~0UL/255 * 0x80)"
+                                    }
+                                }
+                            ],
+                            "message": "Potential Buffer Overflow"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_5145_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Validates configuration values for PhpMyAdmin setup.",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to echoing unfiltered user input.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 22,
+                                        "snippet": "$values = json_decode($vals);"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1131_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Executes commands from GET requests and manages call center queues.",
+            "reasoning": "The source code directly uses user-supplied input in an event socket request, leading to Remote Code Execution.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 27,
+                                        "endLine": 28,
+                                        "snippet": "require_once \"resources/require.php\";\nrequire_once \"resources/check_auth.php\";"
+                                    }
+                                }
+                            ],
+                            "message": "Remote Code Execution via 'cmd' parameter"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_472_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays a notice, either a default message or user-provided content.",
+            "reasoning": "The source code directly prints user input without sanitization, leading to a Cross-Site Scripting (XSS) vulnerability.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 39,
+                                        "endLine": 39,
+                                        "snippet": "    print 'Sorry, it seems your internet connexion is off.<br>';"
+                                    }
+                                }
+                            ],
+                            "message": "XSS via 'transphrase' parameter"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 40,
+                                        "endLine": 40,
+                                        "snippet": "    print 'You need to be connected to network to use this software.<br>';"
+                                    }
+                                }
+                            ],
+                            "message": "Potential XSS via 'transkey' parameter, if translations are not properly escaped."
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4618_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Manages Git operations like checking repository status, checking out, and committing changes.",
+            "reasoning": "The source code is vulnerable to Command Injection due to improper input sanitization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 36,
+                                        "endLine": 36,
+                                        "snippet": ""
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection via cp.exec"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1510_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Sysctl interface to LLC network subsystem.",
+            "reasoning": "No direct vulnerabilities found in the provided source code snippet.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_558_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Deeply merges objects or arrays.",
+            "reasoning": "The code is vulnerable to prototype pollution through the '__proto__' key check, allowing property injection into all objects.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 31,
+                                        "endLine": 31,
+                                        "snippet": "function merge(target, obj) {"
+                                    }
+                                }
+                            ],
+                            "message": "Prototype Pollution"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4622_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Parses Linux cmdline string into key/value pairs object.",
+            "reasoning": "The code does not properly sanitize input, potentially allowing prototype pollution.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 1,
+                                        "endLine": 48,
+                                        "snippet": "function reducer(result, arg)\n{\n  arg = arg.split('=')\n\n  // Get key node\n  const keypath = arg.shift().split('.')\n\n  // Get value\n  let val = true\n  if(arg.length)"
+                                    }
+                                }
+                            ],
+                            "message": "Prototype Pollution"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1400_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Handles login and logout functionality for a web application.",
+            "reasoning": "The redirect based on params[:ref] could lead to open redirect vulnerabilities if not properly validated.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 24,
+                                        "snippet": "  def login_success\n    if params[:ref].blank?\n      redirect_to default_logged_in_path"
+                                    }
+                                }
+                            ],
+                            "message": "Open Redirect"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4408_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "A login page for phpRedisAdmin",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to echoing user input without sanitization.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 22,
+                                        "snippet": "        </div>"
+                                    }
+                                }
+                            ],
+                            "message": "Reflected XSS"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_556_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Deeply assigns properties of source objects to a target object.",
+            "reasoning": "No convincing vulnerabilities found due to the nature of the operations and the use of external, reputable libraries.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_549_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Generate tag links for models in a CRM system.",
+            "reasoning": "The method tags_for_index is vulnerable to XSS due to unsafe query interpolation in link_to_function.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 11,
+                                        "endLine": 19,
+                                        "snippet": "  def tags_for_index(model)\n    model.tags.inject(\"\".html_safe) do |out, tag|\n      query = controller.send(:current_query) || \"\"\n      hashtag = \"##{tag}\"\n      if query.empty?\n        query = hashtag\n      elsif !query.include?(hashtag)\n        query += \" #{hashtag}\"\n      end"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_5184_0.c",
+            "runs": [
+            ],
+            "language": "N/A",
+            "purpose": "N/A",
+            "reasoning": "No source code provided.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4083_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Generates a hash for a given value and returns it, handling different scopes.",
+            "reasoning": "The source code directly uses user input from GET parameters without proper validation, leading to potential security risks. However, the primary function is to generate a hash, which mitigates the risk of direct injection attacks. The lack of input validation could be exploited in scenarios where the hash generation mechanism or the use of the 'scope' parameter could be abused.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 15,
+                                        "snippet": "\ncall_user_func(function() {"
+                                    }
+                                }
+                            ],
+                            "message": "Potential security risk from direct user input."
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_1862_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Implements AArch64-specific system calls.",
+            "reasoning": "No direct vulnerabilities found in the provided snippet. The code mainly defines system call interfaces without obvious exploitable flaws.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3990_0.go",
+            "runs": [
+            ],
+            "language": "Go",
+            "purpose": "Protects against open-redirect vulnerabilities by sanitizing URLs.",
+            "reasoning": "The function attempts to sanitize URLs to prevent open-redirect vulnerabilities. However, it does not validate the scheme or domain, potentially allowing an attacker to craft a URL that passes the check but redirects to an external site. This is exploitable if an attacker can control the input URL.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 11,
+                                        "endLine": 20,
+                                        "snippet": "// 🚨 SECURITY: Handlers MUST call this on any redirection destination URL derived from untrusted\n// user input, or else there is a possible open-redirect vulnerability.\nfunc SafeRedirectURL(urlStr string) string {\n\tu, err := url.Parse(urlStr)\n\tif err != nil || !strings.HasPrefix(u.Path, \"/\") {\n\t\treturn \"/\"\n\t}\n\n\t// Make sure u.Path always starts with a single slash.\n\tu.Path = path.Clean(u.Path)"
+                                    }
+                                }
+                            ],
+                            "message": "Open-Redirect Vulnerability"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1154_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Securely download files based on user input",
+            "reasoning": "The source code directly uses user input in the file download process without proper validation, making it vulnerable to Directory Traversal.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 18,
+                                        "snippet": "\tThe Initial Developer of the Original Code is"
+                                    }
+                                }
+                            ],
+                            "message": "Directory Traversal"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4442_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Recursively sets a value in an object based on a given path.",
+            "reasoning": "The code attempts to mitigate prototype pollution by blocking '__proto__', 'constructor', and 'prototype' in paths. However, it doesn't fully prevent pollution.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 10,
+                                        "endLine": 36,
+                                        "snippet": "}\n\nfunction recursivelySetIn (object, path, value, index) {\n  if (index === path.length) {\n    return value\n  }\n\n  object = object || {}\n\n  // https://stackoverflow.com/a/60850027"
+                                    }
+                                }
+                            ],
+                            "message": "Prototype Pollution"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4067_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays a notice, with optional translation or custom message.",
+            "reasoning": "The source code properly escapes output to prevent Cross-Site Scripting (XSS) vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_2892_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Configures URLs and names for downloading Python and Visual C++ Build Tools.",
+            "reasoning": "No direct vulnerabilities found in static configuration data.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1921_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Enhances a forum's discussion list with sticky control functionality.",
+            "reasoning": "No direct vulnerabilities found in the provided source code snippet. The code primarily extends functionality without obvious security implications.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4686_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Secure memory handling functions implementation.",
+            "reasoning": "The code correctly implements secure memory handling functions, including a constant-time comparison to mitigate timing attacks. No exploitable vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_555_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Deeply mixes objects into a target object.",
+            "reasoning": "The check against '__proto__' prevents prototype pollution, making no convincing vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_3806_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Base controller for a Rails application with CSRF protection",
+            "reasoning": "No vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_2025_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Generates hashed passwords for LDAP attributes.",
+            "reasoning": "The use of MD5 and SHA1 for password hashing is considered insecure due to vulnerabilities to collision attacks.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 14,
+                                        "endLine": 14,
+                                        "snippet": "    # STUB: This is here to fulfill the requirements of an RFC, which"
+                                    }
+                                },
+                                {
+                                    "region": {
+                                        "startLine": 17,
+                                        "endLine": 17,
+                                        "snippet": "    # TODO:"
+                                    }
+                                }
+                            ],
+                            "message": "Insecure Hashing Algorithms (MD5, SHA1)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1485_0.php",
+            "runs": [
+            ],
+            "language": "Unknown",
+            "purpose": "Source code not provided",
+            "reasoning": "No source code to analyze for vulnerabilities.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4357_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Linkifies elements on a web page based on its type.",
+            "reasoning": "The code dynamically loads external scripts, which could lead to security risks if the CDN is compromised. Infinite loops without exit conditions may cause browser or tab to become unresponsive.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 2,
+                                        "endLine": 3,
+                                        "snippet": "  await addon.tab.loadScript(\"https://cdn.jsdelivr.net/npm/linkifyjs@2.1.9/dist/linkify.min.js\");\n  await addon.tab.loadScript(\"https://cdn.jsdelivr.net/npm/linkifyjs@2.1.9/dist/linkify-element.min.js\");"
+                                    }
+                                }
+                            ],
+                            "message": "External script loading vulnerability."
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 12,
+                                        "endLine": 26,
+                                        "snippet": "    case \"projects\":\n      (async () => {\n        while (true) {\n          let element = await addon.tab.waitForElement(\".project-description\", { markAsSeen: true });\n          // Need to convert #[numbers] to solve conflict between tags and external Scratch player links.\n          document.querySelectorAll(\".project-description a\").forEach((element) => {\n              if (/^#\\d+$/.test(element.textContent) && element.previousSibling instanceof Text) {\n                  element.previousSibling.textContent += element.textContent;\n                  element.remove();\n              }"
+                                    }
+                                }
+                            ],
+                            "message": "Potential for infinite loop causing denial of service."
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_1131_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Manages call center queue configurations via event socket commands.",
+            "reasoning": "The source code is vulnerable to Command Injection due to unsanitized input directly used in a command line operation.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 45,
+                                        "endLine": 45,
+                                        "snippet": "//validate the variables"
+                                    }
+                                }
+                            ],
+                            "message": "Command Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3607_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Generates MySQL server configuration for replication setup.",
+            "reasoning": "No direct vulnerabilities found in the JavaScript code itself. However, the dynamic generation of configuration based on user input without validation could lead to misconfigurations if improperly handled server-side.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_5145_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Validates configuration values for PhpMyAdmin setup.",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to echoing unfiltered user input.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 22,
+                                        "snippet": "$values = json_decode($vals);"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_5012_0.rb",
+            "runs": [
+            ],
+            "language": "Ruby",
+            "purpose": "Defines a class with restricted method access for security in a sandbox environment.",
+            "reasoning": "The source code seems secure, focusing on limiting method access to prevent unauthorized operations. No convincing vulnerabilities found.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_4687_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Memory handling functions for security-focused operations",
+            "reasoning": "The custom implementation of memory functions could lead to timing attacks due to non-constant time execution for comparisons.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 25,
+                                        "endLine": 37,
+                                        "snippet": "    while (i < len) {\n        pnt_[i++] = 0U;\n    }\n# endif\n}\n\nint pure_memcmp(const void * const b1_, const void * const b2_, size_t len)\n{\n    const unsigned char *b1 = (const unsigned char *) b1_;\n    const unsigned char *b2 = (const unsigned char *) b2_;"
+                                    }
+                                }
+                            ],
+                            "message": "Timing Attack Vulnerability"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_2003_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Proxy server plugin for handling basic authentication.",
+            "reasoning": "No convincing vulnerabilities found due to the limited context and scope of the provided source code.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_559_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Merge default properties into a target object, recursively.",
+            "reasoning": "The check against '__proto__' prevents prototype pollution, making it secure against such attacks.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_1154_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Securely download files based on user input",
+            "reasoning": "The source code directly uses user input ($_GET[\"f\"]) in file operations, leading to a potential Local File Inclusion (LFI) vulnerability if not properly sanitized.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 20,
+                                        "endLine": 20,
+                                        "snippet": "\tPortions created by the Initial Developer are Copyright (C) 2008-2012"
+                                    }
+                                }
+                            ],
+                            "message": "Local File Inclusion (LFI)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./bad_4067_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Displays a notice, either a default message or user-defined via URL parameters.",
+            "reasoning": "The source code is vulnerable to Cross-Site Scripting (XSS) due to direct output of GET parameters without proper sanitization or encoding.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 36,
+                                        "endLine": 36,
+                                        "snippet": ""
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 37,
+                                        "endLine": 37,
+                                        "snippet": "if (! GETPOST('transkey', 'alphanohtml') && ! GETPOST('transphrase', 'alphanohtml'))"
+                                    }
+                                }
+                            ],
+                            "message": "Cross-Site Scripting (XSS)"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_3288_0.c",
+            "runs": [
+            ],
+            "language": "C",
+            "purpose": "Skips ID3 tags in audio files",
+            "reasoning": "No convincing vulnerabilities found due to limited context and no direct user input handling.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./good_3699_0.py",
+            "runs": [
+            ],
+            "language": "Python",
+            "purpose": "Encryption module supporting AES encryption and decryption.",
+            "reasoning": "The reuse of the counter with an initial value of 0 in AES.MODE_CTR could lead to nonce reuse, making it vulnerable.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 18,
+                                        "endLine": 20,
+                                        "snippet": "    from Crypto.Util import Counter\n\n    def aesEncrypt(data, key):"
+                                    }
+                                }
+                            ],
+                            "message": "Nonce reuse in AES.MODE_CTR"
+                        },
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 24,
+                                        "endLine": 26,
+                                        "snippet": "        return cipher.encrypt(data)\n\n    def aesDecrypt(data, key):"
+                                    }
+                                }
+                            ],
+                            "message": "Nonce reuse in AES.MODE_CTR"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4408_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "A login page for phpRedisAdmin.",
+            "reasoning": "No direct vulnerabilities found in the provided PHP code snippet. The code properly escapes user input for display.",
+            "vulnerabilities": [
+            ],
+            "isVulnerable": false
+        },
+        {
+            "filepath": "./bad_4083_0.php",
+            "runs": [
+            ],
+            "language": "PHP",
+            "purpose": "Generates a HMAC hash from query parameters and returns it.",
+            "reasoning": "The source code directly uses user input from query parameters without proper validation, potentially leading to security vulnerabilities.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 17,
+                                        "endLine": 19,
+                                        "snippet": "    $addition = \\TYPO3\\CMS\\Core\\Utility\\GeneralUtility::_GET('addition');\n    $scope = \\TYPO3\\CMS\\Core\\Utility\\GeneralUtility::_GET('scope');\n"
+                                    }
+                                }
+                            ],
+                            "message": "Potential for Injection Attacks"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        },
+        {
+            "filepath": "./good_4930_0.js",
+            "runs": [
+            ],
+            "language": "JavaScript",
+            "purpose": "Lint SQL queries using an AJAX request.",
+            "reasoning": "The source code directly sends user input to a server-side script without sanitization, potentially leading to SQL Injection on the server-side.",
+            "vulnerabilities": [
+                {
+                    "tool": "GPT",
+                    "results": [
+                        {
+                            "locations": [
+                                {
+                                    "region": {
+                                        "startLine": 22,
+                                        "endLine": 28,
+                                        "snippet": "        }\n\n        updateLinting(cm, found);\n    }\n\n    $.ajax({\n        method: \"POST\","
+                                    }
+                                }
+                            ],
+                            "message": "Potential Server-Side SQL Injection"
+                        }
+                    ]
+                }
+            ],
+            "isVulnerable": true
+        }
+    ],
+    "statistics": {
+        "targetFiles": 184,
+        "scannedFiles": 184,
+        "vulnerableFiles": 109,
+        "scanStartTime": "2024-02-05T21:36:51.448",
+        "scanEndTime": "2024-02-05T21:37:13.584",
+        "scanDurationSeconds": 22
+    },
+    "evaluation": {
+        "positives": 92,
+        "negatives": 92,
+        "truePositives": 58,
+        "falsePositives": 51,
+        "trueNegatives": 41,
+        "falseNegatives": 34,
+        "accuracy": 0.5380434782608695,
+        "precision": 0.5321100917431193,
+        "recall": 0.6304347826086957,
+        "f1": 0.5771144278606966
+    }
+}

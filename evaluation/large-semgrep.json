@@ -1,12 +1,6 @@
 {
     "fileScanResults": [
         {
-            "filepath": "./good_2228_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3870_0.c",
             "vulnerabilities": [
             ],
@@ -43,30 +37,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_5373_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 39,
-                                        "endLine": 39,
-                                        "snippet": "\t$params = @unserialize($params);"
-                                    }
-                                }
-                            ],
-                            "message": "Calling `unserialize()` with user input in the pattern can lead to arbitrary code execution. Consider using JSON or structured data approaches (e.g. Google Protocol Buffers).",
-                            "ruleId": "php.lang.security.unserialize-use.unserialize-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./good_5756_0.c",
             "vulnerabilities": [
             ],
@@ -74,12 +44,6 @@
         },
         {
             "filepath": "./good_4636_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5426_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -97,12 +61,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_4724_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_2495_0.rb",
             "vulnerabilities": [
             ],
@@ -113,60 +71,6 @@
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4938_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5447_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 47,
-                                        "endLine": 47,
-                                        "snippet": "\t\t$lastline = exec($command, $output, $retval);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./good_750_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 61,
-                                        "endLine": 64,
-                                        "snippet": "$query    = \"SELECT `id`, `name`\n             FROM `glpi_crontasks`\n             WHERE `state` = '\".Crontask::STATE_RUNNING.\"'\n                   AND unix_timestamp(`lastrun`) + $cycle * `frequency` < unix_timestamp(now())\";"
-                                    }
-                                }
-                            ],
-                            "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
-                            "ruleId": "php.lang.security.injection.tainted-sql-string.tainted-sql-string"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./good_5076_0.py",
@@ -185,43 +89,6 @@
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4601_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 26,
-                                        "endLine": 26,
-                                        "snippet": "        $ret = exec($cmd,$output);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 26,
-                                        "endLine": 26,
-                                        "snippet": "        $ret = exec($cmd,$output);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
-                            "ruleId": "php.lang.security.tainted-exec.tainted-exec"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./bad_1750_0.rb",
@@ -309,36 +176,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_5445_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 47,
-                                        "endLine": 47,
-                                        "snippet": "\t\t$lastline = exec($command, $output, $retval);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./good_5635_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_549_0.rb",
             "vulnerabilities": [
                 {
@@ -395,12 +232,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_5358_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_1862_0.c",
             "vulnerabilities": [
             ],
@@ -419,25 +250,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_3235_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_441_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_3134_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4974_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -455,36 +268,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_5443_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 43,
-                                        "endLine": 43,
-                                        "snippet": "\t\t$lastline = exec($command, $output, $retval);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_1519_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3606_0.php",
             "vulnerabilities": [
             ],
@@ -492,24 +275,6 @@
         },
         {
             "filepath": "./good_4542_0.py",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_2754_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4712_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4662_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -527,54 +292,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_5447_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 43,
-                                        "endLine": 43,
-                                        "snippet": "\t\t$lastline = exec($command, $output, $retval);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_781_0.js",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 102,
-                                        "endLine": 102,
-                                        "snippet": "    obj = obj[key];"
-                                    }
-                                }
-                            ],
-                            "message": "Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.",
-                            "ruleId": "javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_4686_0.c",
             "vulnerabilities": [
             ],
@@ -588,61 +305,6 @@
         },
         {
             "filepath": "./bad_2501_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_979_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_778_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4601_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 26,
-                                        "endLine": 26,
-                                        "snippet": "        $ret = exec($cmd,$output);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 26,
-                                        "endLine": 26,
-                                        "snippet": "        $ret = exec($cmd,$output);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection. You should use `escapeshellarg()` when using command.",
-                            "ruleId": "php.lang.security.tainted-exec.tainted-exec"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_2110_0.rb",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -676,36 +338,6 @@
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_2228_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5373_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 42,
-                                        "endLine": 42,
-                                        "snippet": "\t\t$params = @unserialize( $params );"
-                                    }
-                                }
-                            ],
-                            "message": "Calling `unserialize()` with user input in the pattern can lead to arbitrary code execution. Consider using JSON or structured data approaches (e.g. Google Protocol Buffers).",
-                            "ruleId": "php.lang.security.unserialize-use.unserialize-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./good_4512_0.js",
@@ -790,36 +422,6 @@
                             ],
                             "message": "Detected calls to child_process from a function argument `tagName`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensure user input is correctly sanitized or sandboxed. ",
                             "ruleId": "javascript.lang.security.detect-child-process.detect-child-process"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./good_5426_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5873_0.rb",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 48,
-                                        "endLine": 48,
-                                        "snippet": "          self.headers['ETag'] ||= %(\"#{Digest::MD5.hexdigest(body)}\")"
-                                    }
-                                }
-                            ],
-                            "message": "Should not use md5 to generate hashes. md5 is proven to be vulnerable through the use of brute-force attacks. Could also result in collisions, leading to potential collision attacks. Use SHA256 or other hashing functions instead.",
-                            "ruleId": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5"
                         }
                     ]
                 }
@@ -973,25 +575,7 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./bad_4974_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3134_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_3235_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4977_0.phtml",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1003,30 +587,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_5443_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 47,
-                                        "endLine": 47,
-                                        "snippet": "\t\t$lastline = exec($command, $output, $retval);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_3889_0.java",
             "vulnerabilities": [
             ],
@@ -1035,35 +595,11 @@
         {
             "filepath": "./bad_3288_0.c",
             "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 34,
-                                        "endLine": 34,
-                                        "snippet": "\tmemset (buf, 0, sizeof (buf)) ;"
-                                    }
-                                }
-                            ],
-                            "message": "When handling sensitive information in a buffer, it's important to ensure  that the data is securely erased before the buffer is deleted or reused.  While `memset()` is commonly used for this purpose, it can leave sensitive  information behind due to compiler optimizations or other factors.  To avoid this potential vulnerability, it's recommended to use the  `memset_s()` function instead. `memset_s()` is a standardized function  that securely overwrites the memory with a specified value, making it more  difficult for an attacker to recover any sensitive data that was stored in  the buffer. By using `memset_s()` instead of `memset()`, you can help to  ensure that your application is more secure and less vulnerable to exploits  that rely on residual data in memory.",
-                            "ruleId": "c.lang.security.insecure-use-memset.insecure-use-memset"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_3606_0.php",
-            "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_4662_0.php",
+            "filepath": "./bad_3606_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1079,36 +615,6 @@
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4746_0.h",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5445_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 43,
-                                        "endLine": 43,
-                                        "snippet": "\t\t$lastline = exec($command, $output, $retval);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./good_3798_0.php",
@@ -1127,30 +633,6 @@
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5444_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 47,
-                                        "endLine": 47,
-                                        "snippet": "\t\t$lastline = exec($command, $output, $retval);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./bad_1464_0.phtml",
@@ -1189,43 +671,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_311_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 48,
-                                        "endLine": 48,
-                                        "snippet": "if (@file_exists ($root . $_POST['path'] . '/' . $_FILES['file']['name'])) {"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 58,
-                                        "endLine": 58,
-                                        "snippet": "\t@chmod ($root . $_POST['path'] . '/' . $_FILES['file']['name'], 0666);"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_3738_0.php",
             "vulnerabilities": [
             ],
@@ -1238,18 +683,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_4136_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5425_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_4930_0.js",
             "vulnerabilities": [
             ],
@@ -1257,18 +690,6 @@
         },
         {
             "filepath": "./good_4029_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_971_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5427_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1304,12 +725,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_4560_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_1514_0.php",
             "vulnerabilities": [
             ],
@@ -1317,24 +732,6 @@
         },
         {
             "filepath": "./good_4130_0.h",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_708_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4350_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4958_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1396,36 +793,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./good_5374_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 42,
-                                        "endLine": 42,
-                                        "snippet": "\t\t$params = @unserialize( $params );"
-                                    }
-                                }
-                            ],
-                            "message": "Calling `unserialize()` with user input in the pattern can lead to arbitrary code execution. Consider using JSON or structured data approaches (e.g. Google Protocol Buffers).",
-                            "ruleId": "php.lang.security.unserialize-use.unserialize-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_2196_0.py",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_5159_0.phtml",
             "vulnerabilities": [
             ],
@@ -1468,42 +835,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_4438_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_2230_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5446_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 47,
-                                        "endLine": 47,
-                                        "snippet": "\t\t$lastline = exec($command, $output, $retval);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_2113_0.php",
             "vulnerabilities": [
                 {
@@ -1528,76 +859,7 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./bad_1014_0.c",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 21,
-                                        "endLine": 21,
-                                        "snippet": "\tmemset(nfunc, 0, sizeof(nfunc));"
-                                    }
-                                }
-                            ],
-                            "message": "When handling sensitive information in a buffer, it's important to ensure  that the data is securely erased before the buffer is deleted or reused.  While `memset()` is commonly used for this purpose, it can leave sensitive  information behind due to compiler optimizations or other factors.  To avoid this potential vulnerability, it's recommended to use the  `memset_s()` function instead. `memset_s()` is a standardized function  that securely overwrites the memory with a specified value, making it more  difficult for an attacker to recover any sensitive data that was stored in  the buffer. By using `memset_s()` instead of `memset()`, you can help to  ensure that your application is more secure and less vulnerable to exploits  that rely on residual data in memory.",
-                            "ruleId": "c.lang.security.insecure-use-memset.insecure-use-memset"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 46,
-                                        "endLine": 46,
-                                        "snippet": "\tmemset(nfunc, 0, sizeof(nfunc));"
-                                    }
-                                }
-                            ],
-                            "message": "When handling sensitive information in a buffer, it's important to ensure  that the data is securely erased before the buffer is deleted or reused.  While `memset()` is commonly used for this purpose, it can leave sensitive  information behind due to compiler optimizations or other factors.  To avoid this potential vulnerability, it's recommended to use the  `memset_s()` function instead. `memset_s()` is a standardized function  that securely overwrites the memory with a specified value, making it more  difficult for an attacker to recover any sensitive data that was stored in  the buffer. By using `memset_s()` instead of `memset()`, you can help to  ensure that your application is more secure and less vulnerable to exploits  that rely on residual data in memory.",
-                            "ruleId": "c.lang.security.insecure-use-memset.insecure-use-memset"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 75,
-                                        "endLine": 75,
-                                        "snippet": "\tmemset(nfunc, 0, sizeof(nfunc));"
-                                    }
-                                }
-                            ],
-                            "message": "When handling sensitive information in a buffer, it's important to ensure  that the data is securely erased before the buffer is deleted or reused.  While `memset()` is commonly used for this purpose, it can leave sensitive  information behind due to compiler optimizations or other factors.  To avoid this potential vulnerability, it's recommended to use the  `memset_s()` function instead. `memset_s()` is a standardized function  that securely overwrites the memory with a specified value, making it more  difficult for an attacker to recover any sensitive data that was stored in  the buffer. By using `memset_s()` instead of `memset()`, you can help to  ensure that your application is more secure and less vulnerable to exploits  that rely on residual data in memory.",
-                            "ruleId": "c.lang.security.insecure-use-memset.insecure-use-memset"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 105,
-                                        "endLine": 105,
-                                        "snippet": "\tmemset(nfunc, 0, sizeof(nfunc));"
-                                    }
-                                }
-                            ],
-                            "message": "When handling sensitive information in a buffer, it's important to ensure  that the data is securely erased before the buffer is deleted or reused.  While `memset()` is commonly used for this purpose, it can leave sensitive  information behind due to compiler optimizations or other factors.  To avoid this potential vulnerability, it's recommended to use the  `memset_s()` function instead. `memset_s()` is a standardized function  that securely overwrites the memory with a specified value, making it more  difficult for an attacker to recover any sensitive data that was stored in  the buffer. By using `memset_s()` instead of `memset()`, you can help to  ensure that your application is more secure and less vulnerable to exploits  that rely on residual data in memory.",
-                            "ruleId": "c.lang.security.insecure-use-memset.insecure-use-memset"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./good_5012_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4834_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1640,12 +902,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./bad_3682_0.py",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3738_0.php",
             "vulnerabilities": [
             ],
@@ -1653,18 +909,6 @@
         },
         {
             "filepath": "./bad_5706_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4136_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5425_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1699,60 +943,6 @@
                             ],
                             "message": "Executing non-constant commands. This can lead to command injection.",
                             "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./good_5444_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 43,
-                                        "endLine": 43,
-                                        "snippet": "\t\t$lastline = exec($command, $output, $retval);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_5020_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_1999_0.js",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 9,
-                                        "endLine": 9,
-                                        "snippet": "      command,"
-                                    }
-                                }
-                            ],
-                            "message": "Detected calls to child_process from a function argument `command`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensure user input is correctly sanitized or sandboxed. ",
-                            "ruleId": "javascript.lang.security.detect-child-process.detect-child-process"
                         }
                     ]
                 }
@@ -1814,36 +1004,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./good_1991_1.ts",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4353_0.java",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 44,
-                                        "endLine": 44,
-                                        "snippet": "  private DefaultHttpClient defaultHttpClient = new DefaultHttpClient();"
-                                    }
-                                }
-                            ],
-                            "message": "DefaultHttpClient is deprecated. Further, it does not support connections using TLS1.2, which makes using DefaultHttpClient a security hazard. Use HttpClientBuilder instead.",
-                            "ruleId": "java.lang.security.audit.crypto.ssl.defaulthttpclient-is-deprecated.defaulthttpclient-is-deprecated"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./good_1637_0.rb",
             "vulnerabilities": [
                 {
@@ -1868,43 +1028,7 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./good_4977_0.phtml",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_4330_0.go",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5374_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 42,
-                                        "endLine": 42,
-                                        "snippet": "\t\t$params = @unserialize( $params );"
-                                    }
-                                }
-                            ],
-                            "message": "Calling `unserialize()` with user input in the pattern can lead to arbitrary code execution. Consider using JSON or structured data approaches (e.g. Google Protocol Buffers).",
-                            "ruleId": "php.lang.security.unserialize-use.unserialize-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_2230_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -1914,30 +1038,6 @@
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5446_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 43,
-                                        "endLine": 43,
-                                        "snippet": "\t\t$lastline = exec($command, $output, $retval);"
-                                    }
-                                }
-                            ],
-                            "message": "Executing non-constant commands. This can lead to command injection.",
-                            "ruleId": "php.lang.security.exec-use.exec-use"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./good_2113_0.php",
@@ -2059,12 +1159,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_441_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_4445_0.java",
             "vulnerabilities": [
             ],
@@ -2072,12 +1166,6 @@
         },
         {
             "filepath": "./good_3236_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5427_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2111,18 +1199,6 @@
                 }
             ],
             "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_4560_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4350_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
         },
         {
             "filepath": "./bad_3605_0.php",
@@ -2301,49 +1377,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_4794_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 60,
-                                        "endLine": 60,
-                                        "snippet": "if (is_file($filename))"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_10_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3889_0.java",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_3748_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4575_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2429,42 +1463,6 @@
         },
         {
             "filepath": "./bad_4130_0.h",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4796_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_979_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5398_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_708_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_2110_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_2325_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2603,61 +1601,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_4803_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 66,
-                                        "endLine": 66,
-                                        "snippet": "if (is_file($filename))"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_2885_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5873_0.rb",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 48,
-                                        "endLine": 48,
-                                        "snippet": "          self.headers['ETag'] ||= %(\"#{Digest::MD5.hexdigest(body)}\")"
-                                    }
-                                }
-                            ],
-                            "message": "Should not use md5 to generate hashes. md5 is proven to be vulnerable through the use of brute-force attacks. Could also result in collisions, leading to potential collision attacks. Use SHA256 or other hashing functions instead.",
-                            "ruleId": "ruby.lang.security.weak-hashes-md5.weak-hashes-md5"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./good_1014_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2687,43 +1631,7 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./bad_4834_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4794_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 60,
-                                        "endLine": 60,
-                                        "snippet": "if (is_file($filename))"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./good_1974_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4575_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2764,12 +1672,6 @@
                 }
             ],
             "isVulnerable": true
-        },
-        {
-            "filepath": "./good_3748_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
         },
         {
             "filepath": "./bad_4339_0.js",
@@ -2833,12 +1735,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_891_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_499_0.java",
             "vulnerabilities": [
                 {
@@ -2863,12 +1759,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./good_1519_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_4542_0.py",
             "vulnerabilities": [
             ],
@@ -2876,12 +1766,6 @@
         },
         {
             "filepath": "./bad_5536_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4712_0.rb",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2899,40 +1783,10 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_2325_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_4846_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4803_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 60,
-                                        "endLine": 60,
-                                        "snippet": "if (is_file($filename))"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./good_1418_0.php",
@@ -2948,12 +1802,6 @@
         },
         {
             "filepath": "./good_2885_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4724_0.rb",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -2977,30 +1825,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_750_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 61,
-                                        "endLine": 64,
-                                        "snippet": "$query    = \"SELECT `id`, `name`\n             FROM `glpi_crontasks`\n             WHERE `state` = '\".Crontask::STATE_RUNNING.\"'\n                   AND unix_timestamp(`lastrun`) + $cycle * `frequency` < unix_timestamp(now())\";"
-                                    }
-                                }
-                            ],
-                            "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
-                            "ruleId": "php.lang.security.injection.tainted-sql-string.tainted-sql-string"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_3883_0.php",
             "vulnerabilities": [
             ],
@@ -3013,19 +1837,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_4796_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_1006_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5398_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -3086,12 +1898,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_1991_1.ts",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./bad_1637_0.rb",
             "vulnerabilities": [
             ],
@@ -3105,12 +1911,6 @@
         },
         {
             "filepath": "./bad_5756_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_5309_0.cpp",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -3141,12 +1941,6 @@
         },
         {
             "filepath": "./bad_472_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4938_0.c",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -3241,18 +2035,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./bad_891_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5428_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_1510_0.c",
             "vulnerabilities": [
             ],
@@ -3282,67 +2064,6 @@
                             ],
                             "message": "Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.",
                             "ruleId": "javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./good_4802_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 66,
-                                        "endLine": 66,
-                                        "snippet": "if (is_file($filename))"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_4353_0.java",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 98,
-                                        "endLine": 98,
-                                        "snippet": "      SSLContext sslContext = SSLContext.getInstance(\"TLS\");"
-                                    }
-                                }
-                            ],
-                            "message": "An insecure SSL context was detected. TLS versions 1.0, 1.1, and all SSL versions are considered weak encryption and are deprecated. Use SSLContext.getInstance(\"TLSv1.2\") for the best security.",
-                            "ruleId": "java.lang.security.audit.weak-ssl-context.weak-ssl-context"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 93,
-                                        "endLine": 93,
-                                        "snippet": "    DefaultHttpClient defaultHttpClient = new DefaultHttpClient();"
-                                    }
-                                }
-                            ],
-                            "message": "DefaultHttpClient is deprecated. Further, it does not support connections using TLS1.2, which makes using DefaultHttpClient a security hazard. Use HttpClientBuilder instead.",
-                            "ruleId": "java.lang.security.audit.crypto.ssl.defaulthttpclient-is-deprecated.defaulthttpclient-is-deprecated"
                         }
                     ]
                 }
@@ -3385,12 +2106,6 @@
                 }
             ],
             "isVulnerable": true
-        },
-        {
-            "filepath": "./good_3682_0.py",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
         },
         {
             "filepath": "./bad_4408_0.php",
@@ -3455,62 +2170,6 @@
             "isVulnerable": true
         },
         {
-            "filepath": "./bad_5635_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_1152_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 66,
-                                        "endLine": 66,
-                                        "snippet": "\t\t\t\t\t\t@unlink(base64_decode($recording_file_path[$index]));"
-                                    }
-                                }
-                            ],
-                            "message": "Using user input when deleting files with `unlink()` is potentially dangerous. A malicious actor could use this to modify or access files they have no right to.",
-                            "ruleId": "php.lang.security.unlink-use.unlink-use"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 65,
-                                        "endLine": 65,
-                                        "snippet": "\t\t\t\t\tif (file_exists(base64_decode($recording_file_path[$index]))) {"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 66,
-                                        "endLine": 66,
-                                        "snippet": "\t\t\t\t\t\t@unlink(base64_decode($recording_file_path[$index]));"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./bad_5184_0.c",
             "vulnerabilities": [
             ],
@@ -3529,12 +2188,6 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_5358_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_3990_0.go",
             "vulnerabilities": [
             ],
@@ -3547,128 +2200,16 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_5020_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_2754_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_4442_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
         },
         {
-            "filepath": "./bad_1999_0.js",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 4,
-                                        "endLine": 4,
-                                        "snippet": "  child_process.exec(command, {maxBuffer : 1500 * 1024}, function(error, stdout, stderr) {"
-                                    }
-                                }
-                            ],
-                            "message": "Detected calls to child_process from a function argument `command`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensure user input is correctly sanitized or sandboxed. ",
-                            "ruleId": "javascript.lang.security.detect-child-process.detect-child-process"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./good_4067_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_2827_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 53,
-                                        "endLine": 53,
-                                        "snippet": "\t\t@unlink(AT_CONTENT_DIR.'/feeds/'.$feed_id.'_rss.cache');"
-                                    }
-                                }
-                            ],
-                            "message": "Using user input when deleting files with `unlink()` is potentially dangerous. A malicious actor could use this to modify or access files they have no right to.",
-                            "ruleId": "php.lang.security.unlink-use.unlink-use"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 47,
-                                        "endLine": 47,
-                                        "snippet": "\t\tif ($f = @fopen($title_file, 'w')) {"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 53,
-                                        "endLine": 53,
-                                        "snippet": "\t\t@unlink(AT_CONTENT_DIR.'/feeds/'.$feed_id.'_rss.cache');"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 71,
-                                        "endLine": 71,
-                                        "snippet": "\tif (file_exists($title_file)) {"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 72,
-                                        "endLine": 72,
-                                        "snippet": "\t\t$_GET['title'] = file_get_contents($title_file);"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
         },
         {
             "filepath": "./good_2892_0.js",
@@ -3684,36 +2225,6 @@
         },
         {
             "filepath": "./good_4686_0.c",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_781_0.js",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 106,
-                                        "endLine": 106,
-                                        "snippet": "    obj = obj[key];"
-                                    }
-                                }
-                            ],
-                            "message": "Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.",
-                            "ruleId": "javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./good_971_0.php",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -3747,48 +2258,6 @@
                 }
             ],
             "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_4802_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 60,
-                                        "endLine": 60,
-                                        "snippet": "if (is_file($filename))"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_5428_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./bad_4958_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_778_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
         },
         {
             "filepath": "./good_2025_0.rb",
@@ -3847,31 +2316,7 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_10_0.rb",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_2196_0.py",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_5309_0.cpp",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
             "filepath": "./good_4357_0.js",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_4438_0.js",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -3931,104 +2376,10 @@
             "isVulnerable": false
         },
         {
-            "filepath": "./good_2827_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 53,
-                                        "endLine": 53,
-                                        "snippet": "\t\t@unlink(AT_CONTENT_DIR.'/feeds/'.$feed_id.'_rss.cache');"
-                                    }
-                                }
-                            ],
-                            "message": "Using user input when deleting files with `unlink()` is potentially dangerous. A malicious actor could use this to modify or access files they have no right to.",
-                            "ruleId": "php.lang.security.unlink-use.unlink-use"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 47,
-                                        "endLine": 47,
-                                        "snippet": "\t\tif ($f = @fopen($title_file, 'w')) {"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 53,
-                                        "endLine": 53,
-                                        "snippet": "\t\t@unlink(AT_CONTENT_DIR.'/feeds/'.$feed_id.'_rss.cache');"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 71,
-                                        "endLine": 71,
-                                        "snippet": "\tif (file_exists($title_file)) {"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 72,
-                                        "endLine": 72,
-                                        "snippet": "\t\t$_GET['title'] = file_get_contents($title_file);"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
             "filepath": "./good_3288_0.c",
             "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 34,
-                                        "endLine": 34,
-                                        "snippet": "\tmemset (buf, 0, sizeof (buf)) ;"
-                                    }
-                                }
-                            ],
-                            "message": "When handling sensitive information in a buffer, it's important to ensure  that the data is securely erased before the buffer is deleted or reused.  While `memset()` is commonly used for this purpose, it can leave sensitive  information behind due to compiler optimizations or other factors.  To avoid this potential vulnerability, it's recommended to use the  `memset_s()` function instead. `memset_s()` is a standardized function  that securely overwrites the memory with a specified value, making it more  difficult for an attacker to recover any sensitive data that was stored in  the buffer. By using `memset_s()` instead of `memset()`, you can help to  ensure that your application is more secure and less vulnerable to exploits  that rely on residual data in memory.",
-                            "ruleId": "c.lang.security.insecure-use-memset.insecure-use-memset"
-                        }
-                    ]
-                }
             ],
-            "isVulnerable": true
+            "isVulnerable": false
         },
         {
             "filepath": "./good_3699_0.py",
@@ -4038,99 +2389,6 @@
         },
         {
             "filepath": "./good_4408_0.php",
-            "vulnerabilities": [
-            ],
-            "isVulnerable": false
-        },
-        {
-            "filepath": "./good_311_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 48,
-                                        "endLine": 48,
-                                        "snippet": "if (@file_exists ($root . $_POST['path'] . '/' . $_FILES['file']['name'])) {"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 58,
-                                        "endLine": 58,
-                                        "snippet": "\t@chmod ($root . $_POST['path'] . '/' . $_FILES['file']['name'], 0666);"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./good_1152_0.php",
-            "vulnerabilities": [
-                {
-                    "tool": "Semgrep OSS",
-                    "results": [
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 71,
-                                        "endLine": 71,
-                                        "snippet": "\t\t\t\t\t\t@unlink($call_recording_path.'/'.$call_recording_name);"
-                                    }
-                                }
-                            ],
-                            "message": "Using user input when deleting files with `unlink()` is potentially dangerous. A malicious actor could use this to modify or access files they have no right to.",
-                            "ruleId": "php.lang.security.unlink-use.unlink-use"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 70,
-                                        "endLine": 70,
-                                        "snippet": "\t\t\t\t\tif (file_exists($call_recording_path.'/'.$call_recording_name)) {"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        },
-                        {
-                            "locations": [
-                                {
-                                    "region": {
-                                        "startLine": 71,
-                                        "endLine": 71,
-                                        "snippet": "\t\t\t\t\t\t@unlink($call_recording_path.'/'.$call_recording_name);"
-                                    }
-                                }
-                            ],
-                            "message": "File name based on user input risks server-side request forgery.",
-                            "ruleId": "php.lang.security.injection.tainted-filename.tainted-filename"
-                        }
-                    ]
-                }
-            ],
-            "isVulnerable": true
-        },
-        {
-            "filepath": "./bad_4746_0.h",
             "vulnerabilities": [
             ],
             "isVulnerable": false
@@ -4149,23 +2407,23 @@
         }
     ],
     "statistics": {
-        "targetFiles": 308,
-        "scannedFiles": 308,
-        "vulnerableFiles": 75,
-        "scanStartTime": "2024-01-31T11:41:14.085",
-        "scanEndTime": "2024-01-31T11:41:21.653",
+        "targetFiles": 184,
+        "scannedFiles": 184,
+        "vulnerableFiles": 34,
+        "scanStartTime": "2024-02-05T21:14:25.163",
+        "scanEndTime": "2024-02-05T21:14:32.818",
         "scanDurationSeconds": 7
     },
     "evaluation": {
-        "positives": 154,
-        "negatives": 154,
-        "truePositives": 39,
-        "falsePositives": 36,
-        "trueNegatives": 118,
-        "falseNegatives": 115,
-        "accuracy": 0.5097402597402597,
-        "precision": 0.52,
-        "recall": 0.2532467532467532,
-        "f1": 0.34061135371179035
+        "positives": 92,
+        "negatives": 92,
+        "truePositives": 18,
+        "falsePositives": 16,
+        "trueNegatives": 76,
+        "falseNegatives": 74,
+        "accuracy": 0.5108695652173914,
+        "precision": 0.5294117647058824,
+        "recall": 0.1956521739130435,
+        "f1": 0.28571428571428575
     }
 }

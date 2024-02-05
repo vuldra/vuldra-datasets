@@ -10,15 +10,16 @@ by [Nikitopoulos et al.](https://dl.acm.org/doi/10.1145/3468264.3473122) The Vul
 the CrossVul dataset, containing only good/bad sample pairs that can be associated with commits from open source
 projects that have patched vulnerabilities in a single file.
 
-The datasets were generated using the provided bash scripts and are sorted by the size of each file. Like in the CrossVul dataset, files labeled as good_* are the patched
+The datasets were generated using the provided bash scripts and are sorted by the size of each file. Like in the
+CrossVul dataset, files labeled as good_* are the patched
 version of files labeled as bad_*. All datasets have a balanced number of good and bad samples.
 
 | Dataset                    | Description                          | Good samples | Bad samples | Total disk size |
 |----------------------------|--------------------------------------|--------------|-------------|-----------------|
-| [data_small](data_small)   | Each good file <= 100 byte file size | 4            | 4           | 12 KB           |
-| [data_medium](data_medium) | Each good file <= 1 KB file size     | 31           | 31          | 56 KB           |
-| [data_large](data_large)   | Each good file <= 2.8 KB file size   | 154          | 154         | 516 KB          |
-| [data_xl](data_xl)         | Each good file <= 10 KB file size    | 692          | 692         | 7.3 MB          |
+| [data_tiny](data_tiny)     | Each good file <= 100 byte file size | 4            | 4           | 12 KB           |
+| [data_small](data_small)   | Each good file <= 1 KB file size     | 31           | 31          | 56 KB           |
+| [data_medium](data_medium) | Each good file <= 1.7 KB file size   | 73           | 73          | 157 KB          |
+| [data_large](data_large)   | Each good file <= 2 KB file size     | 92           | 92          | 226 KB          |
 
 ## Usage of scripts
 
