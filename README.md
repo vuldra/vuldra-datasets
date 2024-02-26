@@ -14,11 +14,11 @@ The datasets were generated using the provided bash scripts and are sorted by th
 CrossVul dataset, files labeled as good_* are the patched
 version of files labeled as bad_*. All datasets have a balanced number of good and bad samples.
 
-| Dataset                    | Description                          | Good samples | Bad samples | Total disk size |
-|----------------------------|--------------------------------------|--------------|-------------|-----------------|
-| [data_small](data_small)   | Each good file <= 1 KB file size     | 31           | 31          | 56 KB           |
-| [data_medium](data_medium) | Each good file <= 1.7 KB file size   | 73           | 73          | 157 KB          |
-| [data_large](data_large)   | Each good file <= 2 KB file size     | 92           | 92          | 226 KB          |
+| Dataset                    | Description                        | Good samples | Bad samples | Total disk size |
+|----------------------------|------------------------------------|--------------|-------------|-----------------|
+| [data_small](data_small)   | Each good file <= 1 KB file size   | 31           | 31          | 56 KB           |
+| [data_medium](data_medium) | Each good file <= 1.7 KB file size | 73           | 73          | 157 KB          |
+| [data_large](data_large)   | Each good file <= 2 KB file size   | 92           | 92          | 226 KB          |
 
 ## Usage of scripts
 
@@ -33,10 +33,8 @@ Scripts require Bash version 4.0 or higher.
    supported by [Semgrep](https://semgrep.dev/docs/supported-languages/)
    or [Snyk](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks) from the source directory to the
    destination directory.
-4. `copy_max_filesize.sh <SOURCE_DIR> <DESTINATION_DIR> <MAX_FILESIZE>` - Copies all **good_*** files that are smaller
-   or equal to the specified maximum file size. It also copies each corresponding **bad_*** file, even if this file
-   exceeds the specified max file size. Provide the maximum file size with a suffix _c = Bytes_, _k = KB_, _M = MB_
-   which is then used by the [find](https://man7.org/linux/man-pages/man1/find.1.html) command.
+4. `copy_min_max_filesize.sh <SOURCE_DIR> <DESTINATION_DIR> <MIN_FILESIZE_B> <MAX_FILESIZE_B>` - Copies all sample
+   pairs, that are between min and max files size specified in Bytes.
 
 ## Other Commands
 
