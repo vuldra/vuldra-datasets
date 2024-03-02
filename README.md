@@ -14,11 +14,11 @@ The datasets were generated using the provided bash scripts and are sorted by th
 CrossVul dataset, files labeled as good_* are the patched
 version of files labeled as bad_*. All datasets have a balanced number of good and bad samples.
 
-| Dataset                                 | Individual file size | Good samples | Bad samples | Total disk size | Should stay below OpenAI TPM limit |
-|-----------------------------------------|----------------------|--------------|-------------|-----------------|------------------------------------|
-| [crossvul small](data/crossvul/small)   | <= 1 KB              | 19           | 19          | 25 KB           | < 150K TPM                         |
-| [crossvul medium](data/crossvul/medium) | <= 2 KB              | 83           | 83          | 209 KB          | < 150K TPM                         |
-| [crossvul large](data/crossvul/large)   | <= 3.5 KB            | 196          | 196         | 823 KB          | < 600K TPM                         |
+| Dataset                                 | Individual file size    | Good samples | Bad samples | Total disk size | Should stay below OpenAI TPM limit |
+|-----------------------------------------|-------------------------|--------------|-------------|-----------------|------------------------------------|
+| [crossvul small](data/crossvul/small)   | 100 B <= size <= 1 KB   | 19           | 19          | 25 KB           | < 150K TPM                         |
+| [crossvul medium](data/crossvul/medium) | 100 B <= size <= 2 KB   | 83           | 83          | 209 KB          | < 150K TPM                         |
+| [crossvul large](data/crossvul/large)   | 100 B <= size <= 3.5 KB | 196          | 196         | 823 KB          | < 600K TPM                         |
 
 ## Usage of scripts
 
